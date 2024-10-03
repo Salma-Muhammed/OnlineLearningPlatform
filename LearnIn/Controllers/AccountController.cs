@@ -71,7 +71,11 @@ namespace LearnIn.Controllers
 
             return View();
         }
-
+        public async Task<IActionResult> LogOut()
+        {
+            await _signInManager.SignOutAsync();
+            return Redirect("/Account/LogIn");
+        }
 
     }
 }

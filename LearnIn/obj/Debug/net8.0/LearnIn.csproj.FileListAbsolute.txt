@@ -140,3 +140,4 @@ C:\Users\salma\source\repos\OnlineLearningPlatform\LearnIn\obj\Debug\net8.0\refi
 C:\Users\salma\source\repos\OnlineLearningPlatform\LearnIn\obj\Debug\net8.0\LearnIn.pdb
 C:\Users\salma\source\repos\OnlineLearningPlatform\LearnIn\obj\Debug\net8.0\LearnIn.genruntimeconfig.cache
 C:\Users\salma\source\repos\OnlineLearningPlatform\LearnIn\obj\Debug\net8.0\ref\LearnIn.dll
+C:\Users\salma\source\repos\OnlineLearningPlatform\LearnIn\obj\Debug\net8.0\LearnIn.sourcelink.json
