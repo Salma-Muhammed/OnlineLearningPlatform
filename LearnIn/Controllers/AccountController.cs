@@ -1,6 +1,9 @@
 ﻿using LearnIn.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 
 namespace LearnIn.Controllers
 {
@@ -8,17 +11,21 @@ namespace LearnIn.Controllers
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
-        public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager)
+        private readonly RoleManager<IdentityRole> _roleManager;
+        public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, RoleManager<IdentityRole> roleManager)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _roleManager = roleManager;
         }
+        //-------------------Sign Up---------------------//
         public IActionResult SignUP()
         {
             //user name, email, password
             ApplicationUser ApplicationUser = new ApplicationUser();
             return View(ApplicationUser);
         }
+
         //to add new user to the DB
         [HttpPost]
         public async Task<IActionResult> SignUp(ApplicationUser user, string password)
@@ -48,8 +55,7 @@ namespace LearnIn.Controllers
             // Return the view with the model to display errors
             return View(user);
         }
-
-
+        //-------------------Log In---------------------//
         public IActionResult LogIn()
         {
             var user = new ApplicationUser();
@@ -70,6 +76,102 @@ namespace LearnIn.Controllers
             }
 
             return View();
+        }
+        //-------------------Log Out---------------------//
+        public async Task<IActionResult> LogOut()
+        {
+            await _signInManager.SignOutAsync();
+            return Redirect("/Account/LogIn");
+        }
+        //-------------------Add Role---------------------//
+        [Authorize(Roles = "Admin")]
+        [HttpGet]
+        public IActionResult AddRole()
+        {
+            return View();
+        }
+                [Authorize(Roles = "Admin")]
+        [HttpPost]
+        public async Task<IActionResult> AddRole(string RoleName) //Authorized to Admin
+        {
+            if (string.IsNullOrEmpty(RoleName))
+            {
+                ViewBag.ErrorMessage = "Role Name Cannot Be Empty.";
+                return View();
+            }
+            IdentityRole role = new IdentityRole {
+                Name = RoleName           
+            };
+            var result = await _roleManager.CreateAsync(role);
+            if (result.Succeeded)
+            {
+                ViewBag.SuccessMessage = "Role Created Successfully.";
+            }
+            else
+            {
+                ViewBag.ErrorMessage = "Error Occured While Creating Role: " + string.Join(", ", result.Errors.Select(e => e.Description));
+            }
+            return View();
+        }
+        //-------------------Assign Role---------------------//
+        [Authorize(Roles = "Admin")]
+        [HttpGet]
+        public async Task<IActionResult> AssignRole() //Authorized to Admin
+        {
+            // Fetch list of users
+            var users = _userManager.Users.ToList();
+
+            // Fetch list of roles
+            var roles = await _roleManager.Roles.ToListAsync();
+
+            // Pass users and roles to the view using ViewBag
+            ViewBag.Users = users.Select(u => new SelectListItem
+            {
+                Value = u.Id,
+                Text = u.UserName
+            }).ToList();
+
+            ViewBag.Roles = roles.Select(r => new SelectListItem
+            {
+                Value = r.Name,
+                Text = r.Name
+            }).ToList();
+
+            return View();
+        }
+
+        [Authorize(Roles = "Admin")]
+        [HttpPost]
+        public async Task<IActionResult> AssignRole(string userId, string roleName)
+        {
+            if (string.IsNullOrEmpty(userId) || string.IsNullOrEmpty(roleName))
+            {
+                ViewBag.ErrorMessage = "User and Role must be selected.";
+                return RedirectToAction("AssignRole");
+            }
+
+            // Fetch the user by ID
+            var user = await _userManager.FindByIdAsync(userId);
+
+            if (user == null)
+            {
+                ViewBag.ErrorMessage = "User not found.";
+                return RedirectToAction("AssignRole");
+            }
+
+            // Add the user to the selected role
+            var result = await _userManager.AddToRoleAsync(user, roleName);
+
+            if (result.Succeeded)
+            {
+                ViewBag.SuccessMessage = "Role assigned successfully.";
+            }
+            else
+            {
+                ViewBag.ErrorMessage = "Error assigning role: " + string.Join(", ", result.Errors.Select(e => e.Description));
+            }
+
+            return RedirectToAction("AssignRole");
         }
 
 

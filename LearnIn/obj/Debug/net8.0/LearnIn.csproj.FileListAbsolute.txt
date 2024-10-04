@@ -140,6 +140,7 @@ C:\Users\salma\source\repos\OnlineLearningPlatform\LearnIn\obj\Debug\net8.0\refi
 C:\Users\salma\source\repos\OnlineLearningPlatform\LearnIn\obj\Debug\net8.0\LearnIn.pdb
 C:\Users\salma\source\repos\OnlineLearningPlatform\LearnIn\obj\Debug\net8.0\LearnIn.genruntimeconfig.cache
 C:\Users\salma\source\repos\OnlineLearningPlatform\LearnIn\obj\Debug\net8.0\ref\LearnIn.dll
+<<<<<<< HEAD
 C:\Users\suhai\Source\Repos\OnlineLearningPlatform\LearnIn\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\suhai\Source\Repos\OnlineLearningPlatform\LearnIn\bin\Debug\net8.0\appsettings.json
 C:\Users\suhai\Source\Repos\OnlineLearningPlatform\LearnIn\bin\Debug\net8.0\LearnIn.staticwebassets.runtime.json
@@ -283,3 +284,6 @@ C:\Users\suhai\Source\Repos\OnlineLearningPlatform\LearnIn\obj\Debug\net8.0\refi
 C:\Users\suhai\Source\Repos\OnlineLearningPlatform\LearnIn\obj\Debug\net8.0\LearnIn.pdb
 C:\Users\suhai\Source\Repos\OnlineLearningPlatform\LearnIn\obj\Debug\net8.0\LearnIn.genruntimeconfig.cache
 C:\Users\suhai\Source\Repos\OnlineLearningPlatform\LearnIn\obj\Debug\net8.0\ref\LearnIn.dll
+=======
+C:\Users\salma\source\repos\OnlineLearningPlatform\LearnIn\obj\Debug\net8.0\LearnIn.sourcelink.json
+>>>>>>> d27a1bfc856da9f31b235c675f965d0bf21a5659
