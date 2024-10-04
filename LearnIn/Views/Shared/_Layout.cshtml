@@ -3,10 +3,117 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - LearnIn</title>
+    <title>LearnIn</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/LearnIn.styles.css" asp-append-version="true" />
+    <style>
+        /* Container*/
+        .container {
+            font-family: 'Arial', sans-serif;
+            font-size: 18px;
+        }
+
+        /* Navbar styling */
+        .navbar-brand {
+            font-weight: bold;
+            color: black !important;
+            padding: 5px 10px;
+            margin-left: 2em;
+            font-size: 32px;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Items */
+        .navbar-nav {
+            justify-content: flex-end !important;
+            
+        }
+
+        .nav-item {
+            margin-left: 1.6em;
+        }
+
+        .nav-link {
+            color: black !important;
+            font-size: 18px;
+            font-weight: 500;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: #298EE5 !important;
+            text-decoration: none;
+        }
+
+        /* Log In button */
+        #btn-log {
+            color: #298EE5;
+            border: none;
+            padding: 8px 15px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left:1em;
+        }
+
+        #btn-log:hover {
+            text-decoration: underline;
+            text-underline-position: under;
+        }
+
+        /* Sign-up button */
+        #btn-sign {
+            color: #298EE5;
+            border:iframe;
+            border-color:#298EE5;
+            padding: 8px 15px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #btn-sign:hover {
+             background-color:lightblue;
+        }
+
+        a{
+            text-decoration:none;
+        }
+
+        /* Search bar */
+        #search-bar {
+            margin-left: 3em;
+            max-width: 1200px;
+            flex-grow: 1;
+        }
+
+        #search-input {
+            border: 2px solid #298EE7;
+            border-radius: 25px;
+            padding: 5px 10px;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        #search-btn {
+            background-color: #298EE7;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 25px;
+            cursor: pointer;
+            margin-left:0.7em;
+            font-weight:bold;
+        }
+
+        #search-btn:hover {
+            background-color: #1e6bb3;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -17,15 +124,31 @@
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+
+                <!-- Search bar -->
+                <form class="d-flex" id="search-bar" role="search">
+                    <input id="search-input" type="search" placeholder="Search Courses..." aria-label="Search" />
+                    <button id="search-btn" type="submit">Search</button>
+                </form>
+                
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="" asp-action="">All Courses</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="" asp-action="">Contact Us</a>
                         </li>
                     </ul>
+                    <button type="button" id="btn-log">
+                        <a asp-area="" asp-controller="Account" asp-action="LogIn">Log In</a>
+                    </button>
+                    <button type="button" id="btn-sign">
+                        <a asp-area="" asp-controller="Account" asp-action="SignUp">Sign up</a>
+                    </button>
                 </div>
             </div>
         </nav>

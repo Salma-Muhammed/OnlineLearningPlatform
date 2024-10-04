@@ -15,7 +15,7 @@ namespace LearnIn.Controllers
         }
         public IActionResult SignUP()
         {
-            //user name, email, phone, password
+            //user name, email, password
             ApplicationUser ApplicationUser = new ApplicationUser();
             return View(ApplicationUser);
         }
