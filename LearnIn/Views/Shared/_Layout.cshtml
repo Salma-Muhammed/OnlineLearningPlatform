@@ -113,6 +113,12 @@
         #search-btn:hover {
             background-color: #1e6bb3;
         }
+
+        /* Active class for the current page */
+        .nav-link.active {
+            color: #298EE5 !important; /* Make the current page link blue */
+        }
+
     </style>
 </head>
 <body>
@@ -127,7 +133,7 @@
 
                 <!-- Search bar -->
                 <form class="d-flex" id="search-bar" role="search">
-                    <input id="search-input" type="search" placeholder="Search Courses..." aria-label="Search" />
+                    <input id="search-input" type="search" placeholder="Search Courses..." aria-label="Search"  />
                     <button id="search-btn" type="submit">Search</button>
                 </form>
                 
@@ -136,18 +142,16 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
-                         <li class="nav-item">
-                            <a class="nav-link text-dark" href="/Account/SignUp">Account</a>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="AllCourses" asp-action="CoursesList">All Courses</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="" asp-action="">All Courses</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="ContactUs" asp-action="Contact">Contact Us</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="" asp-action="">Contact Us</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="MyAccount">My Account</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" href="/Account/LogOut">Log Out</a>
-                        </li>                      
                     </ul>
                     <button type="button" id="btn-log">
                         <a asp-area="" asp-controller="Account" asp-action="LogIn">Log In</a>
@@ -155,6 +159,7 @@
                     <button type="button" id="btn-sign">
                         <a asp-area="" asp-controller="Account" asp-action="SignUp">Sign up</a>
                     </button>
+                    
                 </div>
             </div>
         </nav>
@@ -170,9 +175,31 @@
             &copy; 2024 - LearnIn - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
+
+<script>
+    // Get the current page URL
+    const currentPage = window.location.pathname.toLowerCase();
+
+    // Get all navigation links
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    // Loop through each link and check if its href matches the current page
+    navLinks.forEach(link => {
+        const href = link.getAttribute('href').toLowerCase();
+
+        if (href && currentPage.includes(href)) {
+            link.classList.add('active'); // Add 'active' class to the current page link
+        } else {
+            link.classList.remove('active'); // Remove 'active' class from other links
+        }
+    });
+</script>
+
+

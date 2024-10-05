@@ -12,9 +12,11 @@ namespace LearnIn.Controllers
         {
             _logger = logger;
         }
-        [Authorize] // checks if the user is authenticated // i can put this line after the namespace to apply authorization to all Actions 
+        //[Authorize] // checks if the user is authenticated // i can put this line after the namespace to apply authorization to all Actions 
+
         public IActionResult Index()
         {
+
             return View();
         }
 

@@ -30,8 +30,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dJbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/.Net/DEPI/Final Project/LearnIn/OnlineLearningPlatform/LearnIn/Views/Account/MyAccount.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxNeUFjY291bnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/.Net/DEPI/Final Project/LearnIn/OnlineLearningPlatform/LearnIn/Views/Account/SignUp.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxTaWduVXAuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/.Net/DEPI/Final Project/LearnIn/OnlineLearningPlatform/LearnIn/Views/AllCourses/CoursesList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWxsQ291cnNlc1xDb3Vyc2VzTGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/.Net/DEPI/Final Project/LearnIn/OnlineLearningPlatform/LearnIn/Views/ContactUs/Contact.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFVzXENvbnRhY3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/.Net/DEPI/Final Project/LearnIn/OnlineLearningPlatform/LearnIn/Views/Home/Index.cshtml]

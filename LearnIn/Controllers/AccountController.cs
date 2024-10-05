@@ -55,6 +55,11 @@ namespace LearnIn.Controllers
             // Return the view with the model to display errors
             return View(user);
         }
+        //----------------My Account--------------------//
+        public IActionResult MyAccount()
+        {
+            return View();
+        }
         //-------------------Log In---------------------//
         public IActionResult LogIn()
         {
@@ -81,7 +86,7 @@ namespace LearnIn.Controllers
         public async Task<IActionResult> LogOut()
         {
             await _signInManager.SignOutAsync();
-            return Redirect("/Account/LogIn");
+            return Redirect("/Home/Index");
         }
         //-------------------Add Role---------------------//
         [Authorize(Roles = "Admin")]

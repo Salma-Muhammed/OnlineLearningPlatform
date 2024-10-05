@@ -50,6 +50,10 @@
               "target": "Package",
               "version": "[8.0.8, )"
             },
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[5.2.2, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[8.0.8, )"
@@ -63,6 +67,14 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[8.0.8, )"
+            },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[8.0.0, )"
             }
           },
           "imports": [

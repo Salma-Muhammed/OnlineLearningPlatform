@@ -1,7 +1,259 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "LearnIn - Home Page";
 }
 
-<div class="text-center">
+<!-- Get Started -->
+<section class="animation">
+    <div class="background-image">
+        <img class="custom-image" src="/images/84e1250092f21bc25611fec72e21b099.jpg" />
+        <div class="get-started">
+            <h1>Welcome to LearnIn – Your Gateway to Knowledge</h1>
+            <p>
+                At LearnIn, we believe that learning should be accessible,
+                engaging, and tailored to your needs. Whether you're looking to enhance your skills
+                , switch careers, or pursue a passion, we’ve got the tools and courses to help you succeed.
+            </p>
+            <a href="#courses" class="btn-get-started">Get Started</a>
+        </div>
+    </div>
+</section>
+
+<!-- Courses -->
+<section class="animation">
+    <section id="courses" class="courses">
+        <h2>Our Popular Courses</h2>
+        <div class="course-list">
+            <div class="animation">
+                <div class="course-card">
+                    <h3>Web Development</h3>
+                    <p>Learn HTML, CSS, JavaScript, and more.</p>
+                </div>
+            </div>
+            <div class="animation">
+                <div class="course-card">
+                    <h3>Data Science</h3>
+                    <p>Master Python, data analysis, and machine learning.</p>
+                </div>
+            </div>
+            <div class="animation">
+                <div class="course-card">
+                    <h3>Graphic Design</h3>
+                    <p>Enhance your skills in Adobe Photoshop and Illustrator.</p>
+                </div>
+            </div>
+        </div>
+        <div class="animation">
+            <a href="/AllCourses/CoursesList" class="btn-view-courses">View all Courses &#8594;</a>   <!-- link All courses page -->
+            <h4>Feedbacks?</h4>
+            <a href="#feedbacks" class="feedback-arrow">&#8595;</a>
+        </div>
+    </section>
+</section>
+
+<!-- feedbacks -->
+<section class="animation">
+    <section id="feedbacks" class="feedbacks">
+        <h2>What Our Learners Say</h2>
+        <div class="feedbacks-list">
+            <div class="feedback-item">
+                <p>"The courses are well-structured and easy to follow!"</p>
+                <h4>- John Doe</h4>
+            </div>
+            <div class="feedback-item">
+                <p>"LearnIn helped me get my dream job. Thank you!"</p>
+                <h4>- Jane Smith</h4>
+            </div>
+            <div class="feedback-item">
+                <p>"The instructors are very knowledgeable and supportive."</p>
+                <h4>- Ahmed Ali</h4>
+            </div>
+        </div>
+    </section>
+</section>
+
+
+<style>
+
+    .background-image {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        border-radius:1em;
+    }
+
+    .custom-image {
+        width: 100%;
+        height: auto;
+        opacity: 0.7; 
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+    }
+
+    /* Get Started */
+    .get-started {
+        position: absolute; 
+        bottom: 20px; 
+        top:200px;
+        left: 35%;
+        transform: translateX(-50%); 
+        color: white; 
+        text-align: left;
+        z-index: 1; 
+    }
+
+        .get-started h1 {
+            font-size: 3rem;
+            font-weight:bold;
+        }
+
+        .get-started p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+    .btn-get-started {
+        color: white;
+        border:solid;
+        border-color: #298EE5;
+        padding: 15px 20px;
+        font-size: 20px;
+        font-weight: 600;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-get-started:hover{
+         background-color: lightblue;
+    }
+
+    /* Courses */
+    .courses {
+        padding: 50px 20px;
+        text-align: center;
+    }
+
+        .courses h2 {
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+            font-weight:bold;
+        }
+
+    .course-list {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    .course-card {
+        background-color: #f4f4f4;
+        padding: 20px;
+        width: 300px;
+        margin: 10px;
+        margin-bottom:2em;
+        border-radius: 10px;
+        text-align: center;
+    }
+
+    .btn-view-courses{
+        color: #298EE5;
+        border: solid;
+        border-color: #298EE5;
+        padding: 5px 10px;
+        font-size: 20px;
+        font-weight: 600;
+        border-radius: 25px;
+        margin-top: 1.5em;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-view-courses:hover{
+         background-color: lightblue;
+    }
+
+    h4{
+        margin-top:6em;
+        margin-bottom:4em;
+        font-weight:bold;
+        font-size: 23px;
+    }
+
+    .feedback-arrow{
+        color: #298EE5;
+        border: solid;
+        border-color: #298EE5;
+        padding: 15px 10px;
+        font-size: 30px;
+        font-weight: 600;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .feedback-arrow:hover {
+        background-color: lightblue;
+    }
     
-</div>
+    /* Feedbacks */
+    .feedbacks {
+        color: black;
+        padding: 50px 20px;
+        text-align: center;
+    }
+
+        .feedbacks h2 {
+            margin-top:3em;
+            margin-bottom: 30px;
+            font-weight:bold;
+        }
+
+    .feedbacks-list {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    .feedback-item {
+        width: 300px;
+        margin: 10px;
+    }
+
+        .feedback-item p {
+            font-style:normal;
+        }
+
+    /* Animation */
+    .animation {
+        opacity: 0; 
+        transform: translateY(50px); 
+        transition: opacity 1s ease-out, transform 1.5s ease-out;
+    }
+
+        .animation.animate {
+            opacity: 1; 
+            transform: translateY(0); 
+        }
+
+</style>
+
+
+<!-- for animation -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("animate"); 
+                }
+            });
+        }, { threshold: 0.1 }); 
+
+        document.querySelectorAll(".animation").forEach(section => {
+            observer.observe(section);
+        });
+    });
+</script>

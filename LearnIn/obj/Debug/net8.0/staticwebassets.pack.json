@@ -13,6 +13,14 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "D:\\.Net\\DEPI\\Final Project\\LearnIn\\OnlineLearningPlatform\\LearnIn\\wwwroot\\images\\LearnIn.jpeg",
+      "PackagePath": "staticwebassets\\images\\LearnIn.jpeg"
+    },
+    {
+      "Id": "D:\\.Net\\DEPI\\Final Project\\LearnIn\\OnlineLearningPlatform\\LearnIn\\wwwroot\\images\\LearnIn_Background.jpg",
+      "PackagePath": "staticwebassets\\images\\LearnIn_Background.jpg"
+    },
+    {
       "Id": "D:\\.Net\\DEPI\\Final Project\\LearnIn\\OnlineLearningPlatform\\LearnIn\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
