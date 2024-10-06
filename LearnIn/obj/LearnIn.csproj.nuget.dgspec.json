@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\.Net\\DEPI\\Final Project\\LearnIn\\OnlineLearningPlatform\\LearnIn\\LearnIn.csproj": {}
+    "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\LearnIn.csproj": {}
   },
   "projects": {
-    "D:\\.Net\\DEPI\\Final Project\\LearnIn\\OnlineLearningPlatform\\LearnIn\\LearnIn.csproj": {
+    "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\LearnIn.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\.Net\\DEPI\\Final Project\\LearnIn\\OnlineLearningPlatform\\LearnIn\\LearnIn.csproj",
+        "projectUniqueName": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\LearnIn.csproj",
         "projectName": "LearnIn",
-        "projectPath": "D:\\.Net\\DEPI\\Final Project\\LearnIn\\OnlineLearningPlatform\\LearnIn\\LearnIn.csproj",
-        "packagesPath": "C:\\Users\\suhai\\.nuget\\packages\\",
-        "outputPath": "D:\\.Net\\DEPI\\Final Project\\LearnIn\\OnlineLearningPlatform\\LearnIn\\obj\\",
+        "projectPath": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\LearnIn.csproj",
+        "packagesPath": "C:\\Users\\Mohamed\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\suhai\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Mohamed\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,7 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -75,6 +74,10 @@
             "Microsoft.Extensions.Configuration.Json": {
               "target": "Package",
               "version": "[8.0.0, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[8.0.5, )"
             }
           },
           "imports": [
@@ -96,7 +99,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

@@ -1,4 +1,5 @@
 ﻿using LearnIn.Models;
+using LearnIn.ViewModel;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -19,31 +20,34 @@ namespace LearnIn.Controllers
             _roleManager = roleManager;
         }
         //-------------------Sign Up---------------------//
-        public IActionResult SignUP()
-        {
-            //user name, email, password
-            ApplicationUser ApplicationUser = new ApplicationUser();
-            return View(ApplicationUser);
+        public IActionResult SignUp()
+        {            
+            return View();
         }
 
         //to add new user to the DB
         [HttpPost]
-        public async Task<IActionResult> SignUp(ApplicationUser user, string password)
+        public async Task<IActionResult> SaveSignUp(SignUpViewModel user)
         {
             // Check if the model state is valid
             if (!ModelState.IsValid)
             {
-                return View(user);
+                return View("SignUp",user);
             }
-
+            ApplicationUser NewUser = new ApplicationUser();
+            NewUser.Name = user.Name;
+            NewUser.UserName = user.UserName;
+            NewUser.PasswordHash = user.Password;
+            NewUser.Email = user.Email;
+            NewUser.DateOfBirth = user.DateOfBirth;
             // Create the user with the plain password
-            var result = await _userManager.CreateAsync(user, password);
+            var result = await _userManager.CreateAsync(NewUser, user.Password);
 
             if (result.Succeeded)
             {
                 // Optionally, sign in the user immediately after registration
-                await _signInManager.SignInAsync(user, isPersistent: false);
-                return Redirect("/Account/LogIn");
+                await _signInManager.SignInAsync(NewUser, isPersistent: false);
+                return RedirectToAction("Index","Home");
             }
 
             // If there are errors, add them to the model state
@@ -53,7 +57,7 @@ namespace LearnIn.Controllers
             }
 
             // Return the view with the model to display errors
-            return View(user);
+            return View("SignUp",user);
         }
         //----------------My Account--------------------//
         public IActionResult MyAccount()
@@ -86,7 +90,7 @@ namespace LearnIn.Controllers
         public async Task<IActionResult> LogOut()
         {
             await _signInManager.SignOutAsync();
-            return Redirect("/Home/Index");
+            return RedirectToAction("LogIn","Account");
         }
         //-------------------Add Role---------------------//
         [Authorize(Roles = "Admin")]
@@ -180,5 +184,25 @@ namespace LearnIn.Controllers
         }
 
 
+
+
+
+        public IActionResult ValidateDateOfBirth(DateTime dateOfBirth)
+        {
+            var today = DateTime.Today;
+            var age = today.Year - dateOfBirth.Year;
+
+            if (dateOfBirth > today.AddYears(-age))
+            {
+                age--;
+            }
+
+            if (age < 18 || age > 60)
+            {
+                return Json($"Your age must be between 18 and 60 years.");
+            }
+
+            return Json(true); // Validation successful
+        }
     }
 }
