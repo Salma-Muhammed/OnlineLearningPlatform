@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "I1Rvy+r3DV23b0L6QWEodUAq2jXW1/ezaIRTRbLc8i4=",
+  "Hash": "gZMx1MTB4eThqAL7Ywb4fHPEaM1sO4Dos2ROCUkb6Y8=",
   "Source": "LearnIn",
   "BasePath": "_content/LearnIn",
   "Mode": "Default",
@@ -93,12 +93,12 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "D:\\.Net\\DEPI\\Final Project\\LearnIn\\OnlineLearningPlatform\\LearnIn\\wwwroot\\images\\LearnIn.jpeg",
+      "Identity": "D:\\.Net\\DEPI\\Final Project\\LearnIn\\OnlineLearningPlatform\\LearnIn\\wwwroot\\images\\84e1250092f21bc25611fec72e21b099.jpg",
       "SourceId": "LearnIn",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\.Net\\DEPI\\Final Project\\LearnIn\\OnlineLearningPlatform\\LearnIn\\wwwroot\\",
       "BasePath": "_content/LearnIn",
-      "RelativePath": "images/LearnIn.jpeg",
+      "RelativePath": "images/84e1250092f21bc25611fec72e21b099.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -109,15 +109,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\LearnIn.jpeg"
+      "OriginalItemSpec": "wwwroot\\images\\84e1250092f21bc25611fec72e21b099.jpg"
     },
     {
-      "Identity": "D:\\.Net\\DEPI\\Final Project\\LearnIn\\OnlineLearningPlatform\\LearnIn\\wwwroot\\images\\LearnIn_Background.jpg",
+      "Identity": "D:\\.Net\\DEPI\\Final Project\\LearnIn\\OnlineLearningPlatform\\LearnIn\\wwwroot\\images\\LearnIn-Background.jpg",
       "SourceId": "LearnIn",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\.Net\\DEPI\\Final Project\\LearnIn\\OnlineLearningPlatform\\LearnIn\\wwwroot\\",
       "BasePath": "_content/LearnIn",
-      "RelativePath": "images/LearnIn_Background.jpg",
+      "RelativePath": "images/LearnIn-Background.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -128,7 +128,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\LearnIn_Background.jpg"
+      "OriginalItemSpec": "wwwroot\\images\\LearnIn-Background.jpg"
     },
     {
       "Identity": "D:\\.Net\\DEPI\\Final Project\\LearnIn\\OnlineLearningPlatform\\LearnIn\\wwwroot\\js\\site.js",
