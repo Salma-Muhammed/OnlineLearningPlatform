@@ -1,27 +1,60 @@
-﻿@model ApplicationUser
+﻿@model LearnIn.ViewModel.SignUpViewModel
 
 <div class="signup-form-container">
     <h2>Sign up</h2>
-    <form method="post" asp-action="SignUp">
+    <form method="post" asp-action="SaveSignUp" asp-controller="Account">
+
         <div class="form-group">
-            <label asp-for="UserName" class="control-label">User Name</label>
+            <label asp-for="Name" class="control-label"></label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        
+        <div class="form-group">
+            <label asp-for="UserName" class="control-label"></label>
             <input asp-for="UserName" class="form-control" />
+            <span asp-validation-for="UserName" class="text-danger"></span>
         </div>
 
         <div class="form-group">
-            <label asp-for="Email" class="control-label">Email</label>
+            <label asp-for="Email" class="control-label"></label>
             <input asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
         </div>
 
         <div class="form-group">
-            <label for="Password" class="control-label">Password</label>
-            <input id="password" name="password" class="form-control" type="password" required />
+            <label asp-for="Password" class="control-label"></label>
+            <input asp-for="Password" class="form-control"/>
+            <span asp-validation-for="Password" class="text-danger"></span>
         </div>
 
         <div class="form-group">
-            <label asp-for="PhoneNumber" class="control-label">Phone Number</label>
-            <input asp-for="PhoneNumber" class="form-control" />
+            <label asp-for="ConfirmPassword" class="control-label"></label>
+            <input asp-for="ConfirmPassword" class="form-control"/>
+            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
         </div>
+
+        <div class="form-group">
+            <label asp-for="DateOfBirth" class="control-label"></label>
+            <input asp-for="DateOfBirth" class="form-control" />
+            <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Image" class="control-label"></label>
+            <input asp-for="Image" class="form-control" />
+            <span asp-validation-for="Image" class="text-danger"></span>
+        </div>
+
+        <label >Choose Account Type</label>
+        <div class="form-group">
+            <input type="radio" name="Role" value="Instructor" />
+            <label>Instructor</label>
+            <br />
+            <input type="radio" name="Role" value="Student" checked/>
+            <label>Student</label>
+        </div>
+
         <br />
         <button type="submit" class="btn btn-primary">Sign Up</button>
 
@@ -43,12 +76,11 @@
 
         <!-- Already has an account link -->
         <div class="text-center mt-3">
-            <a href="/Account/LogIn">Already has an account?</a>
+            <a asp-action="LogIn" asp-controller="Account">Already has an account?</a>
         </div>
 
     </form>
 </div>
-
 
 
 <style>
@@ -104,3 +136,9 @@
         background-color:lightblue;
     }
 </style>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
