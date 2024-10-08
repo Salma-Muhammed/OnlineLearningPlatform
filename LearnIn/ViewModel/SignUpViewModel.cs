@@ -7,11 +7,6 @@ namespace LearnIn.ViewModel
     public class SignUpViewModel
     {
         [Required]
-        [MinLength(3 , ErrorMessage ="Name should be at least 3 characters")]
-        [MaxLength(30 , ErrorMessage = "Name should be at most 30 characters")]
-        public string Name { get; set; }
-
-        [Required]
         public string UserName { get; set; }
 
         [Required]
@@ -32,6 +27,8 @@ namespace LearnIn.ViewModel
         [Remote(action: "ValidateDateOfBirth", controller: "Account", ErrorMessage = "Your age must be between 12 and 120 years.")]
         [Display(Name = "Date of Birth")]
         public DateTime DateOfBirth { get; set; }
+
+        public string? PhoneNumber { get; set; }
 
         [Required]
         public string Role { get; set; }

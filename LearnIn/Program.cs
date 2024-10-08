@@ -1,6 +1,7 @@
 using LearnIn.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using LearnIn.Data;
 
 namespace LearnIn
 {

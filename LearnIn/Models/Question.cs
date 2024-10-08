@@ -1,15 +1,14 @@
-﻿namespace LearnIn.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace LearnIn.Models
 {
     public class Question
     {
-        public int Id { get; set; }
+        public int QuestionId { get; set; }
+        public string Text { get; set; }
+        [ForeignKey("EXamId")]
+        public int ExamId { get; set; }
+        public ICollection<StudentAnswer> StudentAnswers { get; set; }
 
-        public string Title { get; set; }
-
-        public ICollection<Choices> Choices { get; set; }
-
-        public int QuizId { get; set; }
-
-        public Quiz Quiz { get; set; }
     }
 }

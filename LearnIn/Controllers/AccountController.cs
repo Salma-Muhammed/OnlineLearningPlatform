@@ -35,7 +35,6 @@ namespace LearnIn.Controllers
                 return View("SignUp",user);
             }
             ApplicationUser NewUser = new ApplicationUser();
-            NewUser.Name = user.Name;
             NewUser.UserName = user.UserName;
             NewUser.PasswordHash = user.Password;
             NewUser.Email = user.Email;
