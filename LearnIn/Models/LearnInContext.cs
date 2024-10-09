@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using LearnIn.Models;
 using System.Reflection.Emit;
+using Microsoft.AspNetCore.Identity;
 
 namespace LearnIn.Data
 {
@@ -77,7 +78,15 @@ namespace LearnIn.Data
                 .HasOne(e => e.ApplicationUser)
                 .WithMany(a => a.Teaches)
                 .HasForeignKey(e => e.UserId);
-        }
 
+            //base.OnModelCreating(builder);
+
+            //builder.Entity<IdentityRole>().HasData(
+            //    new IdentityRole { Name = "Administrator", NormalizedName = "ADMINISTRATOR" },
+            //    new IdentityRole { Name = "Student", NormalizedName = "STUDENT" },
+            //    new IdentityRole { Name = "Instructor", NormalizedName = "INSTRUCTOR" }
+            //);
+        }
+       
     }
 }

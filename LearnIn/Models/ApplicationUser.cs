@@ -23,10 +23,6 @@ namespace LearnIn.Models
         public override string Email { get; set; }
 
         [Phone(ErrorMessage = "Invalid phone number.")]
-        public override string? PhoneNumber { get; set; }
-        [Required]
-        [DataType(DataType.Date)]
-        [Display(Name = "Date of Birth")]
-        public DateTime DateOfBirth { get; set; }
+        public override string PhoneNumber { get; set; }
     }
 }

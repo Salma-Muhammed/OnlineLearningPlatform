@@ -162,7 +162,7 @@
                     @if (!User.Identity.IsAuthenticated)
                     {
                         <button type="button" id="btn-log">
-                            <a asp-area="" asp-controller="Account" asp-action="LogIn">Log In</a>
+                            <a asp-area="" asp-controller="Account" asp-action="LogIn">Sign In</a>
                         </button>
                         <button type="button" id="btn-sign">
                             <a asp-area="" asp-controller="Account" asp-action="SignUp">Sign up</a>
@@ -187,6 +187,14 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+@*     @await RenderSectionAsync("Scripts", required: false)
+ *@    
+    @section Scripts {
+        @{
+            await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        }
+    }
+
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
