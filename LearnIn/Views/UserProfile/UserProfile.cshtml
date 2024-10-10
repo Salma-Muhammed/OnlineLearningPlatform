@@ -122,6 +122,27 @@
             color: #298EE5;
 
         }
+
+    /* Log Out */
+    .logout-container {
+        margin-top: 30px;
+        text-align: right;
+    }
+
+    .logout-btn {
+        padding: 10px 20px;
+        background-color: #ff4d4d;
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+        .logout-btn:hover {
+            background-color: #ff3333;
+        }
 </style>
 
 
@@ -152,7 +173,6 @@
             <p><strong>Username:</strong> @Model.UserName</p>
             <p><strong>Email:</strong> @Model.Email</p>
             <p><strong>Phone Number:</strong> @Model.PhoneNumber</p>
-            <p><strong>Date of Birth:</strong> @Model.DateOfBirth.ToString("yyyy-MM-dd")</p>
         </div>
 
         <div class="profile-content" id="enrolled-courses" style="display: none;">
@@ -162,8 +182,13 @@
         <div class="profile-content" id="my-list" style="display: none;">
             <h4>My List</h4>
         </div>
+        <!-- Log out -->
+        <div class="logout-container">
+            <button id="logoutBtn" class="logout-btn">Log Out</button>
+        </div>
     </div>
-    
+
+    <form id="logoutForm" asp-area="" asp-controller="Account" asp-action="Logout" method="post" style="display: none;"></form>
 </div>
 
 
@@ -222,5 +247,17 @@
         }, function (error) {
             console.error("Could not copy profile link: ", error);
         });
+    });
+
+    //-----------------------------------------//
+    // Log out Logic
+    const logoutBtn = document.getElementById('logoutBtn');
+    const logoutForm = document.getElementById('logoutForm');
+
+    logoutBtn.addEventListener('click', function () {
+        const confirmLogout = confirm("Are you sure you want to log out?");
+        if (confirmLogout) {
+            logoutForm.submit(); // Submit the hidden logout form
+        }
     });
 </script>

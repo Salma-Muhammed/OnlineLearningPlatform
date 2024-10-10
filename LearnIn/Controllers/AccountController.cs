@@ -1,10 +1,10 @@
 ﻿using LearnIn.Models;
-using LearnIn.ViewModel;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+
 
 namespace LearnIn.Controllers
 {
@@ -21,43 +21,65 @@ namespace LearnIn.Controllers
         }
         //-------------------Sign Up---------------------//
         public IActionResult SignUp()
-        {            
-            return View();
-        }
-
-        //to add new user to the DB
-        [HttpPost]
-        public async Task<IActionResult> SaveSignUp(SignUpViewModel user)
         {
-            // Check if the model state is valid
-            if (!ModelState.IsValid)
-            {
-                return View("SignUp",user);
-            }
-            ApplicationUser NewUser = new ApplicationUser();
-            NewUser.UserName = user.UserName;
-            NewUser.PasswordHash = user.Password;
-            NewUser.Email = user.Email;
-            NewUser.DateOfBirth = user.DateOfBirth;
-            // Create the user with the plain password
-            var result = await _userManager.CreateAsync(NewUser, user.Password);
-
-            if (result.Succeeded)
-            {
-                // Optionally, sign in the user immediately after registration
-                await _signInManager.SignInAsync(NewUser, isPersistent: false);
-                return RedirectToAction("Index","Home");
-            }
-
-            // If there are errors, add them to the model state
-            foreach (var error in result.Errors)
-            {
-                ModelState.AddModelError(string.Empty, error.Description);
-            }
-
-            // Return the view with the model to display errors
-            return View("SignUp",user);
+            return View(new ApplicationUser());
         }
+
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> SignUp(ApplicationUser model, string password, string confirmPassword, string Role)
+        {
+            if (ModelState.IsValid)
+            {
+                // Handle ImageFile upload
+                if (Request.Form.Files.Count > 0)
+                {
+                    var file = Request.Form.Files[0];
+                    if (file.Length > 0)
+                    {
+                        var filePath = Path.Combine("wwwroot/images", file.FileName);
+                        using (var stream = new FileStream(filePath, FileMode.Create))
+                        {
+                            await file.CopyToAsync(stream);
+                        }
+                        model.Image = "/images/" + file.FileName;
+                    }
+                }
+
+                // Check if passwords match
+                if (password != confirmPassword)
+                {
+                    ModelState.AddModelError(string.Empty, "Password and confirmation password do not match.");
+                    return View(model);
+                }
+
+                // Create user and assign role
+                var result = await _userManager.CreateAsync(model, password);
+                if (result.Succeeded)
+                {
+                    if (!string.IsNullOrEmpty(Role))
+                    {
+                        await _userManager.AddToRoleAsync(model, Role);
+                    }
+
+                    // Automatically log in the user
+                    await _signInManager.SignInAsync(model, isPersistent: false);
+
+                    // Redirect to home after successful registration and sign-in
+                    return RedirectToAction("Index", "Home");
+                }
+
+                // Display any errors during the sign-up process
+                foreach (var error in result.Errors)
+                {
+                    ModelState.AddModelError(string.Empty, error.Description);
+                }
+            }
+
+            return View(model);
+        }
+
         //-------------------Log In---------------------//
         public IActionResult LogIn()
         {
@@ -65,9 +87,9 @@ namespace LearnIn.Controllers
             return View(user);
         }
         [HttpPost]
-        public async Task<IActionResult> LogIn(string userName, string password)
+        public async Task<IActionResult> LogIn(string username, string password)
         {
-            var result = await _signInManager.PasswordSignInAsync(userName, password, false, false);
+            var result = await _signInManager.PasswordSignInAsync(username, password, false, false);
             if (result.Succeeded)
             {
                 return RedirectToAction("Index", "Home");
@@ -75,25 +97,43 @@ namespace LearnIn.Controllers
             else
             {
                 ViewBag.Status = 1;
-                ViewBag.message = "User name or password is incorrect";
+                ViewBag.message = "Username or password is incorrect";
             }
 
             return View();
         }
+        //-----------------------------------------------//
+        public async Task<IActionResult> RedirectBasedOnRole()
+        {
+            var user = await _userManager.GetUserAsync(User);
+
+            if (await _userManager.IsInRoleAsync(user, "Instructor"))
+            {
+                return RedirectToAction("InstructorDashboard", "Instructor");
+            }
+            else if (await _userManager.IsInRoleAsync(user, "Student"))
+            {
+                return RedirectToAction("StudentDashboard", "Student");
+            }
+
+            return RedirectToAction("Index", "Home");
+        }
+
+
         //-------------------Log Out---------------------//
         public async Task<IActionResult> LogOut()
         {
             await _signInManager.SignOutAsync();
-            return RedirectToAction("LogIn","Account");
+            return Redirect("/Home/Index");
         }
         //-------------------Add Role---------------------//
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         [HttpGet]
         public IActionResult AddRole()
         {
             return View();
         }
-                [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<IActionResult> AddRole(string RoleName) //Authorized to Admin
         {
@@ -102,8 +142,9 @@ namespace LearnIn.Controllers
                 ViewBag.ErrorMessage = "Role Name Cannot Be Empty.";
                 return View();
             }
-            IdentityRole role = new IdentityRole {
-                Name = RoleName           
+            IdentityRole role = new IdentityRole
+            {
+                Name = RoleName
             };
             var result = await _roleManager.CreateAsync(role);
             if (result.Succeeded)
@@ -117,7 +158,7 @@ namespace LearnIn.Controllers
             return View();
         }
         //-------------------Assign Role---------------------//
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         [HttpGet]
         public async Task<IActionResult> AssignRole() //Authorized to Admin
         {
@@ -143,7 +184,7 @@ namespace LearnIn.Controllers
             return View();
         }
 
-        [Authorize(Roles = "Admin")]
+        // [Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<IActionResult> AssignRole(string userId, string roleName)
         {
@@ -178,25 +219,5 @@ namespace LearnIn.Controllers
         }
 
 
-
-
-
-        public IActionResult ValidateDateOfBirth(DateTime dateOfBirth)
-        {
-            var today = DateTime.Today;
-            var age = today.Year - dateOfBirth.Year;
-
-            if (dateOfBirth > today.AddYears(-age))
-            {
-                age--;
-            }
-
-            if (age < 18 || age > 60)
-            {
-                return Json($"Your age must be between 18 and 60 years.");
-            }
-
-            return Json(true); // Validation successful
-        }
     }
 }

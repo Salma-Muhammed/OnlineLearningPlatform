@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LearnIn.Migrations
 {
     [DbContext(typeof(LearnInContext))]
-    [Migration("20241008044630_intial")]
+    [Migration("20241010030408_intial")]
     partial class intial
     {
         /// <inheritdoc />
@@ -78,9 +78,6 @@ namespace LearnIn.Migrations
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("DateOfBirth")
-                        .HasColumnType("datetime2");
-
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasMaxLength(256)
@@ -110,6 +107,7 @@ namespace LearnIn.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PhoneNumber")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("PhoneNumberConfirmed")
