@@ -1,0 +1,226 @@
+﻿@model ApplicationUser
+
+@{
+    ViewData["Title"] = "User Profile";
+}
+
+<style>
+    .profile-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        margin: 15px;
+        font-family: Arial, sans-serif;
+        gap: 30px;
+    }
+
+    /* Profile Box */
+    .profile-box {
+        width: 300px;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 10px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        position: relative;
+    }
+
+        .profile-box img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 4px solid #298EE5;
+            display: block;
+            object-fit: cover;
+            margin: 0 auto; /* Center the image horizontally */
+        }
+
+
+        .profile-box h3 {
+            font-size: 32px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 10px;
+            margin-top:20px;
+        }
+
+        .profile-box .edit-icon {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 20px;
+            color: #298EE5;
+            cursor: pointer;
+        }
+
+    .share-profile-btn {
+        align-items: center;
+        justify-content: center;
+        padding: 10px 20px;
+        border: #298EE5;
+        border-radius: 10px;
+        color: #298EE5;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+        margin-top: 15px;
+        width: 100%;
+    }
+
+        .share-profile-btn:hover {
+            background-color: lightblue;
+        }
+
+    /* Navbar Styles */
+    .profile-navbar {
+        width: 100%;
+        height:60px;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        background-color: #298EE5;
+        border-radius: 20px;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+
+        .profile-navbar a {
+            flex: 1;
+            padding: 15px;
+            text-align: center;
+            color: black;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            cursor: pointer;
+            border-color: #298EE5;
+            
+        }
+
+            .profile-navbar a:hover {
+                background-color: lightblue;
+            }
+
+    .active-nav {
+        background-color: lightblue;
+    }
+
+    .profile-more-details {
+        flex-grow: 1; 
+        padding-left: 30px; 
+    }
+
+    .profile-content {
+        margin-top: 20px;
+        background-color: #f1f1f1;
+        border-radius: 10px;
+        width: 100%;
+        padding:20px;
+    }
+        
+        .profile-content h4{
+            font-weight:bold;
+            color: #298EE5;
+
+        }
+</style>
+
+
+<div class="profile-container">
+    <!-- Profile Image and Username Box -->
+    <div class="profile-box">
+        <span class="edit-icon">
+            <a href="/UserProfile/Edit" title="Edit">
+                &#9998;
+            </a>
+        </span>
+        <img src="@Model.Image" alt="Profile Picture">
+        <h3>@Model.UserName</h3>
+        <!-- Share Profile -->
+        <button id="shareProfileBtn" class="share-profile-btn">Share Profile Link</button>
+    </div>
+    <div class="profile-more-details">
+        <!-- Profile Navigation Bar -->
+        <div class="profile-navbar">
+            <a href="#personal-info" id="nav-personal-info" class="active-nav">Personal Information</a>
+            <a href="#enrolled-courses" id="nav-enrolled-courses">Enrolled Courses</a>
+            <a href="#my-list" id="nav-my-list">My List</a>
+        </div>
+
+        <!-- Profile Content -->
+        <div class="profile-content" id="personal-info">
+            <h4>Personal Information</h4>
+            <p><strong>Username:</strong> @Model.UserName</p>
+            <p><strong>Email:</strong> @Model.Email</p>
+            <p><strong>Phone Number:</strong> @Model.PhoneNumber</p>
+            <p><strong>Date of Birth:</strong> @Model.DateOfBirth.ToString("yyyy-MM-dd")</p>
+        </div>
+
+        <div class="profile-content" id="enrolled-courses" style="display: none;">
+            <h4>Enrolled Courses</h4>
+        </div>
+
+        <div class="profile-content" id="my-list" style="display: none;">
+            <h4>My List</h4>
+        </div>
+    </div>
+    
+</div>
+
+
+<script>
+    //handle navigation and content display
+    const personalInfoSection = document.getElementById('personal-info');
+    const enrolledCoursesSection = document.getElementById('enrolled-courses');
+    const myListSection = document.getElementById('my-list');
+
+    const navPersonalInfo = document.getElementById('nav-personal-info');
+    const navEnrolledCourses = document.getElementById('nav-enrolled-courses');
+    const navMyList = document.getElementById('nav-my-list');
+
+    // Update the hover selected
+    navPersonalInfo.addEventListener('click', function () {
+        personalInfoSection.style.display = 'block';
+        enrolledCoursesSection.style.display = 'none';
+        myListSection.style.display = 'none';
+
+        // Update active class
+        navPersonalInfo.classList.add('active-nav');
+        navEnrolledCourses.classList.remove('active-nav');
+        navMyList.classList.remove('active-nav');
+    });
+
+    navEnrolledCourses.addEventListener('click', function () {
+        personalInfoSection.style.display = 'none';
+        enrolledCoursesSection.style.display = 'block';
+        myListSection.style.display = 'none';
+
+        // Update active class
+        navPersonalInfo.classList.remove('active-nav');
+        navEnrolledCourses.classList.add('active-nav');
+        navMyList.classList.remove('active-nav');
+    });
+
+    navMyList.addEventListener('click', function () {
+        personalInfoSection.style.display = 'none';
+        enrolledCoursesSection.style.display = 'none';
+        myListSection.style.display = 'block';
+
+        // Update active class
+        navPersonalInfo.classList.remove('active-nav');
+        navEnrolledCourses.classList.remove('active-nav');
+        navMyList.classList.add('active-nav');
+    });
+
+    //------------------------------------------//
+    // Share profile link logic
+    const shareProfileBtn = document.getElementById('shareProfileBtn');
+    const userProfileUrl = window.location.href;
+
+    shareProfileBtn.addEventListener('click', function () {
+        navigator.clipboard.writeText(userProfileUrl).then(function () {
+            alert("Profile link copied to clipboard!");
+        }, function (error) {
+            console.error("Could not copy profile link: ", error);
+        });
+    });
+</script>

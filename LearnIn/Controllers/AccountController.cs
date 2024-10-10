@@ -58,11 +58,6 @@ namespace LearnIn.Controllers
             // Return the view with the model to display errors
             return View("SignUp",user);
         }
-        //----------------My Account--------------------//
-        public IActionResult MyAccount()
-        {
-            return View();
-        }
         //-------------------Log In---------------------//
         public IActionResult LogIn()
         {
