@@ -30,8 +30,8 @@
             <input asp-for="Age" class="form-control" />
         </div>
         <div class="form-group">
-            <label asp-for="Image" class="control-label">Profile Image Path</label>
-            <input asp-for="Image" class="form-control-file" />
+            <label for="Image">Upload Profile Image:</label>
+            <input type="file" name="uploadedFile" />
             <span asp-validation-for="Image" class="text-danger"></span>
         </div>
         <div class="form-group">

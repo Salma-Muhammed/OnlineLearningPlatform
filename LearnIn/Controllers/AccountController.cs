@@ -13,11 +13,13 @@ namespace LearnIn.Controllers
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly RoleManager<IdentityRole> _roleManager;
-        public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, RoleManager<IdentityRole> roleManager)
+        private readonly IWebHostEnvironment _hostingEnvironment;
+        public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, RoleManager<IdentityRole> roleManager, IWebHostEnvironment hostingEnvironment)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _roleManager = roleManager;
+            _hostingEnvironment = hostingEnvironment;
         }
         //-------------------Sign Up---------------------//
         public IActionResult SignUp()
@@ -28,7 +30,7 @@ namespace LearnIn.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> SignUp(ApplicationUser model, string password, string confirmPassword, string Role)
+        public async Task<IActionResult> SignUp(ApplicationUser model, string password, string confirmPassword, string role)
         {
             if (ModelState.IsValid)
             {
@@ -36,14 +38,32 @@ namespace LearnIn.Controllers
                 if (Request.Form.Files.Count > 0)
                 {
                     var file = Request.Form.Files[0];
+
                     if (file.Length > 0)
                     {
-                        var filePath = Path.Combine("wwwroot/images", file.FileName);
+                        // Define the path to save the file
+                        var uploadsFolder = Path.Combine(_hostingEnvironment.WebRootPath, "images");
+
+                        // Ensure the "images" directory exists
+                        if (!Directory.Exists(uploadsFolder))
+                        {
+                            Directory.CreateDirectory(uploadsFolder);
+                        }
+
+                        // Generate a unique filename to prevent overwriting existing files
+                        var uniqueFileName = Guid.NewGuid().ToString() + "_" + Path.GetFileName(file.FileName);
+
+                        // Combine the folder and file name to get the full path
+                        var filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+                        // Save the file to the server
                         using (var stream = new FileStream(filePath, FileMode.Create))
                         {
                             await file.CopyToAsync(stream);
                         }
-                        model.Image = "/images/" + file.FileName;
+
+                        // Save the relative path (e.g., "/images/uniqueFileName.jpg") in the database
+                        model.Image = "/images/" + uniqueFileName;
                     }
                 }
 
@@ -58,9 +78,9 @@ namespace LearnIn.Controllers
                 var result = await _userManager.CreateAsync(model, password);
                 if (result.Succeeded)
                 {
-                    if (!string.IsNullOrEmpty(Role))
+                    if (!string.IsNullOrEmpty(role))
                     {
-                        await _userManager.AddToRoleAsync(model, Role);
+                        await _userManager.AddToRoleAsync(model, role);
                     }
 
                     // Automatically log in the user

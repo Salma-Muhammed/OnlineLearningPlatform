@@ -2,6 +2,11 @@
     ViewData["Title"] = "LearnIn - Home Page";
 }
 
+@if (ViewBag.SuccessMessage != null)
+{
+    <div class="alert alert-success">@ViewBag.SuccessMessage</div>
+}
+
 <!-- Get Started -->
 <section class="animation">
     <div class="background-image">
