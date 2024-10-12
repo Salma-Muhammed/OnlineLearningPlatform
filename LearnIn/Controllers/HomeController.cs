@@ -16,7 +16,7 @@ namespace LearnIn.Controllers
 
         public IActionResult Index()
         {
-
+            ViewBag.SuccessMessage = TempData["SuccessMessage"];
             return View();
         }
 

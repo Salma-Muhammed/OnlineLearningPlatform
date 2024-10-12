@@ -34,7 +34,7 @@ namespace LearnIn.Migrations
 
                     b.HasIndex("CoursesCourseId");
 
-                    b.ToTable("ApplicationUserCourse");
+                    b.ToTable("ApplicationUserCourse", (string)null);
                 });
 
             modelBuilder.Entity("LearnIn.Models.Answer", b =>
@@ -57,7 +57,7 @@ namespace LearnIn.Migrations
 
                     b.HasKey("AnswerId");
 
-                    b.ToTable("Answers");
+                    b.ToTable("Answers", (string)null);
                 });
 
             modelBuilder.Entity("LearnIn.Models.ApplicationUser", b =>
@@ -148,7 +148,7 @@ namespace LearnIn.Migrations
 
                     b.HasKey("CategoryId");
 
-                    b.ToTable("Categories");
+                    b.ToTable("Categories", (string)null);
                 });
 
             modelBuilder.Entity("LearnIn.Models.Course", b =>
@@ -186,7 +186,7 @@ namespace LearnIn.Migrations
 
                     b.HasKey("CourseId");
 
-                    b.ToTable("Courses");
+                    b.ToTable("Courses", (string)null);
                 });
 
             modelBuilder.Entity("LearnIn.Models.CourseCategory", b =>
@@ -201,7 +201,7 @@ namespace LearnIn.Migrations
 
                     b.HasIndex("CourseId");
 
-                    b.ToTable("CourseCategories");
+                    b.ToTable("CourseCategories", (string)null);
                 });
 
             modelBuilder.Entity("LearnIn.Models.CourseTopic", b =>
@@ -216,7 +216,7 @@ namespace LearnIn.Migrations
 
                     b.HasIndex("TopicId");
 
-                    b.ToTable("CourseTopic");
+                    b.ToTable("CourseTopic", (string)null);
                 });
 
             modelBuilder.Entity("LearnIn.Models.Enroll", b =>
@@ -238,7 +238,7 @@ namespace LearnIn.Migrations
 
                     b.HasIndex("CourseId");
 
-                    b.ToTable("Enrolls");
+                    b.ToTable("Enrolls", (string)null);
                 });
 
             modelBuilder.Entity("LearnIn.Models.Question", b =>
@@ -268,7 +268,7 @@ namespace LearnIn.Migrations
 
                     b.HasIndex("CourseId");
 
-                    b.ToTable("questions");
+                    b.ToTable("questions", (string)null);
                 });
 
             modelBuilder.Entity("LearnIn.Models.StudentAnswer", b =>
@@ -290,7 +290,7 @@ namespace LearnIn.Migrations
 
                     b.HasIndex("QuestionId");
 
-                    b.ToTable("StudentAnswers");
+                    b.ToTable("StudentAnswers", (string)null);
                 });
 
             modelBuilder.Entity("LearnIn.Models.StudentTakesExam", b =>
@@ -312,7 +312,7 @@ namespace LearnIn.Migrations
 
                     b.HasIndex("CourseId");
 
-                    b.ToTable("StudentTakesExams");
+                    b.ToTable("StudentTakesExams", (string)null);
                 });
 
             modelBuilder.Entity("LearnIn.Models.Teach", b =>
@@ -327,7 +327,7 @@ namespace LearnIn.Migrations
 
                     b.HasIndex("CourseId");
 
-                    b.ToTable("Teaches");
+                    b.ToTable("Teaches", (string)null);
                 });
 
             modelBuilder.Entity("LearnIn.Models.Topic", b =>
@@ -351,7 +351,7 @@ namespace LearnIn.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Topic");
+                    b.ToTable("Topic", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
