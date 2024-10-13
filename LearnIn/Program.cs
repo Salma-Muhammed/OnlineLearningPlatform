@@ -47,12 +47,20 @@ namespace LearnIn
             app.UseRouting();
             app.UseAuthorization();
             app.UseAuthorization();
+            //app.UseEndpoints(endpoints =>
+            ////{
+            //    endpoints.MapControllerRoute(
+            //        name: "admin",
+            //        pattern: "{controller=Admin}/{action=Index}/{id?}");
+            //});
+
 
             app.MapControllerRoute(
                 name: "default",
                  pattern: "{controller=Home}/{action=Index}/{id?}");
 
             app.Run();
+
         }
 
     }

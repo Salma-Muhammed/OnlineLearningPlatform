@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "1Si1U88xf4wQdEV8K4uomqAsz5ZP1I2Vy1f5JfKyj7E=",
+  "Hash": "/IWET7GZlx7zD/qgr+GsTMpMJs40F9pFyba1KaH0Pmc=",
   "Source": "LearnIn",
   "BasePath": "_content/LearnIn",
   "Mode": "Default",
@@ -224,6 +224,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\b2f00a7b-4d36-461f-a274-12e6a65f4892_Account-PNG.png"
+    },
+    {
+      "Identity": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\images\\c8a1b313-6a3f-4d24-915c-dd6adf2ae65a_Account-PNG.png",
+      "SourceId": "LearnIn",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\",
+      "BasePath": "_content/LearnIn",
+      "RelativePath": "images/c8a1b313-6a3f-4d24-915c-dd6adf2ae65a_Account-PNG.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\c8a1b313-6a3f-4d24-915c-dd6adf2ae65a_Account-PNG.png"
     },
     {
       "Identity": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\images\\d033aaf2-31aa-4c83-a1e0-4bae42786963_Account-PNG.png",

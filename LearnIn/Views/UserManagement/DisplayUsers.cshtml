@@ -1,0 +1,49 @@
+﻿@{
+    ViewData["Title"] = "DisplayUsers";
+}
+<h1>DisplayUsers</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>User Name</th>
+            <th>Roles</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (ViewBag.UserRoleList != null)
+        {
+            foreach (var user in ViewBag.UserRoleList as List<LearnIn.ViewModels.UserRoleViewModel>)
+            {
+                <tr>
+                    <td>@user.UserName</td>
+                    <td>
+                        @if (user.Roles.Any())
+                        {
+                            @string.Join(", ", user.Roles)
+                        }
+                        else
+                        {
+                            <span>No roles assigned</span>
+                        }
+                    </td>
+                    <td>
+                        <!-- Edit Button -->
+                        <a asp-action="EditUser" asp-route-id="@user.UserId" style="display:inline-block"  class="btn btn-primary btn-sm">
+                            Edit
+                        </a>
+                        <!-- Delete Button -->
+                        <form asp-action="DeleteUser" method="post" onsubmit="return confirm('Are you sure you want to delete this user?');">
+                            <input type="hidden" name="id" value="@user.UserId" />
+                            <button style="display:inline-block" type="submit" class="btn btn-danger">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+
+

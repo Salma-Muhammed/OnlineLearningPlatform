@@ -26,14 +26,6 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\salma\source\repos\OnlineLearningPlatform\LearnIn
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/salma/source/repos/OnlineLearningPlatform/LearnIn/Views/Account/AddRole.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxBZGRSb2xlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/salma/source/repos/OnlineLearningPlatform/LearnIn/Views/Account/AssignRole.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxBc3NpZ25Sb2xlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/salma/source/repos/OnlineLearningPlatform/LearnIn/Views/Account/LogIn.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dJbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -64,6 +56,26 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/salma/source/repos/OnlineLearningPlatform/LearnIn/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/salma/source/repos/OnlineLearningPlatform/LearnIn/Views/UserManagement/AddRole.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlck1hbmFnZW1lbnRcQWRkUm9sZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/salma/source/repos/OnlineLearningPlatform/LearnIn/Views/UserManagement/AssignRole.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlck1hbmFnZW1lbnRcQXNzaWduUm9sZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/salma/source/repos/OnlineLearningPlatform/LearnIn/Views/UserManagement/DeleteUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlck1hbmFnZW1lbnRcRGVsZXRlVXNlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/salma/source/repos/OnlineLearningPlatform/LearnIn/Views/UserManagement/DisplayUsers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlck1hbmFnZW1lbnRcRGlzcGxheVVzZXJzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/salma/source/repos/OnlineLearningPlatform/LearnIn/Views/UserManagement/EditUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlck1hbmFnZW1lbnRcRWRpdFVzZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/salma/source/repos/OnlineLearningPlatform/LearnIn/Views/UserProfile/EditProfile.cshtml]

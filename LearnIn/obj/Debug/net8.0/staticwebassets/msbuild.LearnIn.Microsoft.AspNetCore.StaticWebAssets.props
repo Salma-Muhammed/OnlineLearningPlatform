@@ -144,6 +144,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\b2f00a7b-4d36-461f-a274-12e6a65f4892_Account-PNG.png))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\c8a1b313-6a3f-4d24-915c-dd6adf2ae65a_Account-PNG.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>LearnIn</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/LearnIn</BasePath>
+      <RelativePath>images/c8a1b313-6a3f-4d24-915c-dd6adf2ae65a_Account-PNG.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\c8a1b313-6a3f-4d24-915c-dd6adf2ae65a_Account-PNG.png))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\d033aaf2-31aa-4c83-a1e0-4bae42786963_Account-PNG.png))">
       <SourceType>Package</SourceType>
       <SourceId>LearnIn</SourceId>

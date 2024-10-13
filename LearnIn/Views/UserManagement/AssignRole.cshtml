@@ -1,20 +1,13 @@
 ﻿@{
-    ViewBag.Title = "Assign Role to User";
+    ViewData["Title"] = "Assign Role";
 }
 
-<h2>Assign Role to User</h2>
+<h1>Assign Role To Users</h1>
 
-@if (ViewBag.SuccessMessage != null)
+@if (ViewBag.Message != null)
 {
     <div class="alert alert-success">
-        @ViewBag.SuccessMessage
-    </div>
-}
-
-@if (ViewBag.ErrorMessage != null)
-{
-    <div class="alert alert-danger">
-        @ViewBag.ErrorMessage
+        @ViewBag.Message
     </div>
 }
 

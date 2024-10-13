@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Add Role";
+}
+
+<h1>Add User Role for LearnIn</h1>
+
+<form method="post" asp-action="AddRole">
+    <div class="form-group">
+        <label class="control-label">Role Name</label>
+        <input name="RoleName" class="form-control" />
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Save Role</button>
+</form>
+
+@if (ViewBag.Message != null)
+{
+    <div class="alert alert-success">
+        @ViewBag.Message
+    </div>
+}
