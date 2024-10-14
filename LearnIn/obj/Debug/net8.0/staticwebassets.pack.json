@@ -1,299 +1,299 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\LearnIn.bundle.scp.css",
+      "Id": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\LearnIn.bundle.scp.css",
       "PackagePath": "staticwebassets\\LearnIn.bundle.scp.css"
     },
     {
-      "Id": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\css\\site.css",
+      "Id": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\favicon.ico",
+      "Id": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\images\\3cfe5df7-3f03-4d17-ab92-615f70df05d6_Account-PNG.png",
+      "Id": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\images\\3cfe5df7-3f03-4d17-ab92-615f70df05d6_Account-PNG.png",
       "PackagePath": "staticwebassets\\images\\3cfe5df7-3f03-4d17-ab92-615f70df05d6_Account-PNG.png"
     },
     {
-      "Id": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\images\\5096523c-d334-4e6d-bee2-2fa60a2b0cd1_Account-PNG.png",
+      "Id": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\images\\5096523c-d334-4e6d-bee2-2fa60a2b0cd1_Account-PNG.png",
       "PackagePath": "staticwebassets\\images\\5096523c-d334-4e6d-bee2-2fa60a2b0cd1_Account-PNG.png"
     },
     {
-      "Id": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\images\\84e1250092f21bc25611fec72e21b099.jpg",
+      "Id": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\images\\84e1250092f21bc25611fec72e21b099.jpg",
       "PackagePath": "staticwebassets\\images\\84e1250092f21bc25611fec72e21b099.jpg"
     },
     {
-      "Id": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\images\\87ff8be8-0da5-43b3-a350-e4b51a2bdfdc_Account-PNG.png",
+      "Id": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\images\\87ff8be8-0da5-43b3-a350-e4b51a2bdfdc_Account-PNG.png",
       "PackagePath": "staticwebassets\\images\\87ff8be8-0da5-43b3-a350-e4b51a2bdfdc_Account-PNG.png"
     },
     {
-      "Id": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\images\\8e2d6661-02e3-447b-b395-f990691f23a6_Account-PNG.png",
+      "Id": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\images\\8e2d6661-02e3-447b-b395-f990691f23a6_Account-PNG.png",
       "PackagePath": "staticwebassets\\images\\8e2d6661-02e3-447b-b395-f990691f23a6_Account-PNG.png"
     },
     {
-      "Id": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\images\\9eab9d79-fcf7-4fe2-9d99-9e58c0a7b2a7_Account-PNG.png",
+      "Id": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\images\\9eab9d79-fcf7-4fe2-9d99-9e58c0a7b2a7_Account-PNG.png",
       "PackagePath": "staticwebassets\\images\\9eab9d79-fcf7-4fe2-9d99-9e58c0a7b2a7_Account-PNG.png"
     },
     {
-      "Id": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\images\\LearnIn-Background.jpg",
+      "Id": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\images\\LearnIn-Background.jpg",
       "PackagePath": "staticwebassets\\images\\LearnIn-Background.jpg"
     },
     {
-      "Id": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\images\\b2f00a7b-4d36-461f-a274-12e6a65f4892_Account-PNG.png",
+      "Id": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\images\\b2f00a7b-4d36-461f-a274-12e6a65f4892_Account-PNG.png",
       "PackagePath": "staticwebassets\\images\\b2f00a7b-4d36-461f-a274-12e6a65f4892_Account-PNG.png"
     },
     {
-      "Id": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\images\\c8a1b313-6a3f-4d24-915c-dd6adf2ae65a_Account-PNG.png",
+      "Id": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\images\\c8a1b313-6a3f-4d24-915c-dd6adf2ae65a_Account-PNG.png",
       "PackagePath": "staticwebassets\\images\\c8a1b313-6a3f-4d24-915c-dd6adf2ae65a_Account-PNG.png"
     },
     {
-      "Id": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\images\\d033aaf2-31aa-4c83-a1e0-4bae42786963_Account-PNG.png",
+      "Id": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\images\\d033aaf2-31aa-4c83-a1e0-4bae42786963_Account-PNG.png",
       "PackagePath": "staticwebassets\\images\\d033aaf2-31aa-4c83-a1e0-4bae42786963_Account-PNG.png"
     },
     {
-      "Id": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\images\\d641ef68-f249-49d0-93df-9ed0454d33e0_Account-PNG.png",
+      "Id": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\images\\d641ef68-f249-49d0-93df-9ed0454d33e0_Account-PNG.png",
       "PackagePath": "staticwebassets\\images\\d641ef68-f249-49d0-93df-9ed0454d33e0_Account-PNG.png"
     },
     {
-      "Id": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\images\\e1535df4-afab-4f50-b65d-61ef2d32a8be_Account-PNG.png",
+      "Id": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\images\\e1535df4-afab-4f50-b65d-61ef2d32a8be_Account-PNG.png",
       "PackagePath": "staticwebassets\\images\\e1535df4-afab-4f50-b65d-61ef2d32a8be_Account-PNG.png"
     },
     {
-      "Id": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\images\\e4006d58-3f6f-4c0e-b2ad-89b5bebc9af1_Account-PNG.png",
+      "Id": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\images\\e4006d58-3f6f-4c0e-b2ad-89b5bebc9af1_Account-PNG.png",
       "PackagePath": "staticwebassets\\images\\e4006d58-3f6f-4c0e-b2ad-89b5bebc9af1_Account-PNG.png"
     },
     {
-      "Id": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\js\\site.js",
+      "Id": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
-      "Id": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Id": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },
     {
-      "Id": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Id": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Id": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Id": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Id": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Id": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Id": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Id": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Id": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Id": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Id": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Id": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Id": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Id": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Id": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Id": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Id": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Id": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Id": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Id": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Id": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Id": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Id": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Id": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Id": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Id": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Id": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Id": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Id": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Id": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Id": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Id": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Id": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Id": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Id": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Id": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Id": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Id": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Id": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Id": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Id": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Id": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Id": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Id": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Id": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Id": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Id": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Id": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Id": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Id": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Id": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Id": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Id": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Id": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Id": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Id": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Id": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Id": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Id": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Id": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Id": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Id": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Id": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Id": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Id": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Id": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Id": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Id": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Id": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Id": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Id": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Id": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Id": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Id": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Id": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Id": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Id": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Id": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Id": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Id": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Id": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Id": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Id": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Id": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Id": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Id": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Id": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Id": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Id": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Id": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Id": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Id": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Id": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Id": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Id": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Id": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Id": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Id": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Id": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {

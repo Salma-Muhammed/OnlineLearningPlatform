@@ -7848,19 +7848,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\salma\\.nuget\\packages\\": {}
+    "C:\\Users\\Mohamed\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\LearnIn.csproj",
+      "projectUniqueName": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\LearnIn.csproj",
       "projectName": "LearnIn",
-      "projectPath": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\LearnIn.csproj",
-      "packagesPath": "C:\\Users\\salma\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\obj\\",
+      "projectPath": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\LearnIn.csproj",
+      "packagesPath": "C:\\Users\\Mohamed\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Mohamed\\Source\\Repos\\OnlineLearningPlatform\\LearnIn\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\salma\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Mohamed\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7868,7 +7868,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -7946,7 +7945,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
