@@ -179,6 +179,12 @@
                         }
                         @if (User.Identity.IsAuthenticated)
                         {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Instructor" asp-action="Index">Instructor</a>
+                            </li>
+                        }
+                        @if (User.Identity.IsAuthenticated)
+                        {
                             <button type="button" id="btn-account">
                             <a asp-area="" asp-controller="UserProfile" asp-action="UserProfile">
                                 @(Model?.UserName ?? "My Account")

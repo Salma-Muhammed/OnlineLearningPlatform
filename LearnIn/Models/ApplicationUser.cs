@@ -11,8 +11,6 @@ namespace LearnIn.Models
         public virtual ICollection<Course> Courses { get; set; } = new List<Course>();
         public virtual ICollection<Enroll> Enrolls { get; set; } = new List<Enroll>();
         public virtual ICollection<Teach> Teaches { get; set; } = new List<Teach>();
-        public virtual ICollection<StudentAnswer> StudentAnswers { get; set; } = new List<StudentAnswer>();
-        public virtual ICollection<StudentTakesExam> StudentTakesExams { get; set; } = new List<StudentTakesExam>();
 
         [Required]
         [StringLength(100, MinimumLength = 4, ErrorMessage = "Username must be between 4 and 100 characters.")]

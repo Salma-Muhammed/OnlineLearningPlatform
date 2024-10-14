@@ -146,9 +146,6 @@ namespace LearnIn.Controllers
             await _signInManager.SignOutAsync();
             return Redirect("/Home/Index");
         }
-      
-      
-
 
     }
 }
