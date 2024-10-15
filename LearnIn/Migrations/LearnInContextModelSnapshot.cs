@@ -189,8 +189,9 @@ namespace LearnIn.Migrations
                     b.Property<string>("Image")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("InstructorId")
-                        .HasColumnType("int");
+                    b.Property<string>("InstructorId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Title")
                         .IsRequired()
@@ -229,6 +230,9 @@ namespace LearnIn.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("CourseId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Id")
                         .HasColumnType("int");
 
                     b.HasKey("UserId", "CourseId");
@@ -289,19 +293,19 @@ namespace LearnIn.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "0f4bb34a-7d3e-4c12-9528-a93ead5c9112",
+                            Id = "f0624519-0751-452e-81b8-005c2b4b811c",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "aab63401-d1d9-4634-a049-6e43c526c7a4",
+                            Id = "ef364cf2-9f29-4495-a072-586c872d3b72",
                             Name = "Student",
                             NormalizedName = "STUDENT"
                         },
                         new
                         {
-                            Id = "c34e37c1-a0f0-431b-ba51-2188cb6e25ae",
+                            Id = "5f7f9421-a7b1-4c0e-917e-36ef568134a9",
                             Name = "Instructor",
                             NormalizedName = "INSTRUCTOR"
                         });
@@ -471,7 +475,7 @@ namespace LearnIn.Migrations
 
             modelBuilder.Entity("LearnIn.Models.Teach", b =>
                 {
-                    b.HasOne("LearnIn.Models.Course", null)
+                    b.HasOne("LearnIn.Models.Course", "Course")
                         .WithMany("Teaches")
                         .HasForeignKey("CourseId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -484,6 +488,8 @@ namespace LearnIn.Migrations
                         .IsRequired();
 
                     b.Navigation("ApplicationUser");
+
+                    b.Navigation("Course");
                 });
 
             modelBuilder.Entity("LearnIn.Models.Topic", b =>

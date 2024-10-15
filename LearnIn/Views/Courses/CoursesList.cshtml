@@ -1,0 +1,27 @@
+﻿@model IEnumerable<LearnIn.Models.Course>
+
+<h2>All Courses</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Duration</th>
+            <th>Category</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var course in Model)
+        {
+            <tr>
+                <td>@course.Title</td>
+                <td>@course.Description</td>
+                <td>@course.Duration</td>
+                <td>@course.Category</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@course.CourseId">Details</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -165,15 +165,18 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         
-                        @if (User.IsInRole("Student") || User.IsInRole("Admin"))
+                        @if (!User.IsInRole("Instructor"))
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="AllCourses" asp-action="CoursesList">All Courses</a>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Courses" asp-action="CoursesList">All Courses</a>
                             </li>
                         }
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="ContactUs" asp-action="Contact">Contact Us</a>
-                        </li>
+                        @if (!User.IsInRole("Admin"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="ContactUs" asp-action="Contact">Contact Us</a>
+                            </li>
+                        }
                         @if (User.IsInRole("Admin"))
                         {
                             <li class="nav-item">
@@ -184,19 +187,23 @@
                         @if (User.IsInRole("Instructor"))
                         {
                             <li class="nav-item">
-                                <a class="nav-link" asp-controller="Instructor" asp-action="MyCourses">My Courses</a>
+                                <a class="nav-link" asp-controller="Courses" asp-action="MyCourses">My Courses</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Courses" asp-action="CreateCourse">New Course</a>
                             </li>
                         }
-
-                        @if (User.Identity.IsAuthenticated)
+                        @if (!User.IsInRole("Admin"))
                         {
-                            <button type="button" id="btn-account">
-                            <a asp-area="" asp-controller="UserProfile" asp-action="UserProfile">
-                                @(Model?.UserName ?? "My Account")
-                            </a>
-                            </button>
-                        }                        
-
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <button type="button" id="btn-account">
+                                    <a asp-area="" asp-controller="UserProfile" asp-action="UserProfile">
+                                        @(Model?.UserName ?? "My Account")
+                                    </a>
+                                </button>
+                            }
+                        }
                     </ul>
                     @if (!User.Identity.IsAuthenticated)
                     {

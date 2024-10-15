@@ -9,6 +9,7 @@ namespace LearnIn.Data
     public class LearnInContext : IdentityDbContext<ApplicationUser>
     {
         public LearnInContext(DbContextOptions<LearnInContext> options) : base(options){}
+        public DbSet<ApplicationUser> ApplicationUsers { get; set; }
         public DbSet<Course> Courses { get; set; }
         public DbSet<Enroll> Enrolls { get; set; }
         public DbSet<Teach> Teaches { get; set; }
@@ -33,11 +34,16 @@ namespace LearnIn.Data
                 .HasOne(e => e.ApplicationUser)
                 .WithMany(a => a.Enrolls)
                 .HasForeignKey(e => e.UserId);
-           
-             builder.Entity<Teach>()
-                .HasOne(e => e.ApplicationUser)
-                .WithMany(a => a.Teaches)
-                .HasForeignKey(e => e.UserId);
+
+            builder.Entity<Teach>()
+            .HasOne(t => t.Instructor)
+            .WithMany(u => u.Teaches)
+            .HasForeignKey(t => t.UserId);
+
+            builder.Entity<Teach>()
+                .HasOne(t => t.Course)
+                .WithMany(c => c.Teaches)
+                .HasForeignKey(t => t.CourseId);
 
             builder.Entity<ContactUs>()
                 .HasOne(c => c.ApplicationUser) // Assuming one user per message

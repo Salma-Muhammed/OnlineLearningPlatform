@@ -21,20 +21,17 @@ namespace LearnIn.Controllers
         }
         public async Task<IActionResult> UserProfile()
         {
-            var user = await _userManager.FindByIdAsync(User.FindFirstValue(ClaimTypes.NameIdentifier));
-            var roles = await _userManager.GetRolesAsync(user);
+            // Get the logged-in user
+            var user = await _userManager.GetUserAsync(User);
 
+            // Redirect to login if no user is found
             if (user == null)
             {
                 return Redirect("/Account/Login");
             }
 
-            var userInfo = new UserRoleViewModel
-            {
-                ApplicationUser = user,
-                Roles = roles // Passing the roles to the view
-            };
-            return View(userInfo);
+            // Pass the ApplicationUser object directly to the view
+            return View(user);
         }
 
 
@@ -84,34 +81,34 @@ namespace LearnIn.Controllers
             {
                 return View(model);
             }
-            else {    
-                // Update the user's profile information with the new data
-                userInfo.UserName = model.UserName;
-                userInfo.Email = model.Email;
-                userInfo.PhoneNumber = model.PhoneNumber;
+            
+            // Update the user's profile information with the new data
+            userInfo.UserName = model.UserName;
+            userInfo.Email = model.Email;
+            userInfo.PhoneNumber = model.PhoneNumber;
 
-                // Handle profile picture upload if provided
-                //if (ImageFile != null && ImageFile.Length > 0)
-                //{
-                //    var fileName = Path.GetFileName(ImageFile.FileName);
-                //    var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images", fileName);
+            //handle profile picture upload if provided
+            //if (ImageFile != null && ImageFile.Length > 0)
+            //{
+            //    var fileName = Path.GetFileName(ImageFile.FileName);
+            //    var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images", fileName);
 
-                //    using (var stream = new FileStream(filePath, FileMode.Create))
-                //    {
-                //        await ImageFile.CopyToAsync(stream);
-                //    }
+            //    using (var stream = new FileStream(filePath, FileMode.Create))
+            //    {
+            //        await ImageFile.CopyToAsync(stream);
+            //    }
 
-                //    // Set the new image path
-                //    userInfo.Image = "/images/" + fileName;
-                //}
+            //    // Set the new image path
+            //    userInfo.Image = "/images/" + fileName;
+            //}
 
-                // Save changes to the database
-                _context.Users.Update(userInfo);
-                await _context.SaveChangesAsync();
+            // Save changes to the database
+            _context.Users.Update(userInfo);
+            await _context.SaveChangesAsync();
 
-                // Redirect back to the profile page to reflect the updated information
-                return RedirectToAction("UserProfile"); // Ensure it redirects to the UserProfile action
-            }
+            // Redirect back to the profile page to reflect the updated information
+            return RedirectToAction("UserProfile"); // Ensure it redirects to the UserProfile action
+        
         }
 
     }

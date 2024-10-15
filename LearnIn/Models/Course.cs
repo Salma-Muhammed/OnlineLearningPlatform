@@ -11,7 +11,7 @@ namespace LearnIn.Models
         public string? Image { get; set; }
         public string Category { get; set; }
         [ForeignKey("InstructorId")]
-        public int InstructorId { get; set; }
+        public string InstructorId { get; set; }
         public ICollection<Enroll> Enrolls { get; set; } = new List<Enroll>();    
         public ICollection<Teach> Teaches { get; set; } = new List<Teach>();
         public ICollection<ApplicationUser> Instructor { get; set; }
