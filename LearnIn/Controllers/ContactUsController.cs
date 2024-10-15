@@ -27,7 +27,7 @@ namespace LearnIn.Controllers
 
             // Redirect to a thank you page or the same contact page with a success message
             ViewBag.SuccessMessage = "Your message has been sent successfully!";
-            return RedirectToAction("Index", "Home"); // Optionally redirect to another action if needed
+            return RedirectToAction("Index"); // Optionally redirect to another action if needed
         }
     }
 }

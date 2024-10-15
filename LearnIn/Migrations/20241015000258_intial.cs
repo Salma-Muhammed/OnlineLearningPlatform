@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace LearnIn.Migrations
 {
     /// <inheritdoc />
-    public partial class Initial : Migration
+    public partial class intial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -64,7 +64,8 @@ namespace LearnIn.Migrations
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Duration = table.Column<int>(type: "int", nullable: false),
                     Image = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Category = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Category = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    InstructorId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -178,18 +179,40 @@ namespace LearnIn.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "ApplicationUserCourse",
+                name: "ContactUs",
                 columns: table => new
                 {
-                    ApplicationUsersId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    CoursesCourseId = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    UserName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Message = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ApplicationUserCourse", x => new { x.ApplicationUsersId, x.CoursesCourseId });
+                    table.PrimaryKey("PK_ContactUs", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_ApplicationUserCourse_AspNetUsers_ApplicationUsersId",
-                        column: x => x.ApplicationUsersId,
+                        name: "FK_ContactUs_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ApplicationUserCourse",
+                columns: table => new
+                {
+                    CoursesCourseId = table.Column<int>(type: "int", nullable: false),
+                    InstructorId = table.Column<string>(type: "nvarchar(450)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ApplicationUserCourse", x => new { x.CoursesCourseId, x.InstructorId });
+                    table.ForeignKey(
+                        name: "FK_ApplicationUserCourse_AspNetUsers_InstructorId",
+                        column: x => x.InstructorId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -252,7 +275,7 @@ namespace LearnIn.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Topic",
+                name: "Topics",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -262,12 +285,33 @@ namespace LearnIn.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Topic", x => x.Id);
+                    table.PrimaryKey("PK_Topics", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Topic_Courses_CourseId",
+                        name: "FK_Topics_Courses_CourseId",
                         column: x => x.CourseId,
                         principalTable: "Courses",
                         principalColumn: "CourseId",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Contents",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    TopicContent = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ContentType = table.Column<int>(type: "int", nullable: false),
+                    TopicId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Contents", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Contents_Topics_TopicId",
+                        column: x => x.TopicId,
+                        principalTable: "Topics",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -276,15 +320,15 @@ namespace LearnIn.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "0fe870a0-c1c4-4a7a-b1c0-aa30e367125b", null, "Instructor", "INSTRUCTOR" },
-                    { "4d8d9488-aff8-441b-9e40-920314dc8426", null, "Admin", "ADMIN" },
-                    { "b7760151-c2cb-42c5-9c3c-88d09b1ad718", null, "Student", "STUDENT" }
+                    { "0f4bb34a-7d3e-4c12-9528-a93ead5c9112", null, "Admin", "ADMIN" },
+                    { "aab63401-d1d9-4634-a049-6e43c526c7a4", null, "Student", "STUDENT" },
+                    { "c34e37c1-a0f0-431b-ba51-2188cb6e25ae", null, "Instructor", "INSTRUCTOR" }
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_ApplicationUserCourse_CoursesCourseId",
+                name: "IX_ApplicationUserCourse_InstructorId",
                 table: "ApplicationUserCourse",
-                column: "CoursesCourseId");
+                column: "InstructorId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
@@ -326,6 +370,16 @@ namespace LearnIn.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
+                name: "IX_ContactUs_UserId",
+                table: "ContactUs",
+                column: "UserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Contents_TopicId",
+                table: "Contents",
+                column: "TopicId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Enrolls_CourseId",
                 table: "Enrolls",
                 column: "CourseId");
@@ -336,8 +390,8 @@ namespace LearnIn.Migrations
                 column: "CourseId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Topic_CourseId",
-                table: "Topic",
+                name: "IX_Topics_CourseId",
+                table: "Topics",
                 column: "CourseId");
         }
 
@@ -363,16 +417,22 @@ namespace LearnIn.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
+                name: "ContactUs");
+
+            migrationBuilder.DropTable(
+                name: "Contents");
+
+            migrationBuilder.DropTable(
                 name: "Enrolls");
 
             migrationBuilder.DropTable(
                 name: "Teaches");
 
             migrationBuilder.DropTable(
-                name: "Topic");
+                name: "AspNetRoles");
 
             migrationBuilder.DropTable(
-                name: "AspNetRoles");
+                name: "Topics");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");

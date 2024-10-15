@@ -9,6 +9,7 @@ namespace LearnIn.Models
         public ContentType ContentType { get; set; } // Enum to indicate if it's a video or file
         [ForeignKey("TopicId")]
         public int TopicId { get; set; }
+        public virtual Topic Topic { get; set; }
     }
     public enum ContentType
     {

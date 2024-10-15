@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using LearnIn.ViewModels;
+using System.Security.Claims;
 
 namespace LearnIn.Controllers
 {
@@ -19,15 +21,19 @@ namespace LearnIn.Controllers
         }
         public async Task<IActionResult> UserProfile()
         {
-            var user = await _userManager.GetUserAsync(User);
+            var user = await _userManager.FindByIdAsync(User.FindFirstValue(ClaimTypes.NameIdentifier));
+            var roles = await _userManager.GetRolesAsync(user);
 
             if (user == null)
             {
                 return Redirect("/Account/Login");
             }
 
-            var userInfo = await _context.Users.FindAsync(user.Id);
-
+            var userInfo = new UserRoleViewModel
+            {
+                ApplicationUser = user,
+                Roles = roles // Passing the roles to the view
+            };
             return View(userInfo);
         }
 

@@ -1,10 +1,13 @@
-﻿namespace LearnIn.ViewModels
+﻿using LearnIn.Models;
+
+namespace LearnIn.ViewModels
 {
     public class UserRoleViewModel
     {
         public string UserId { get; set; }
         public string UserName { get; set; }
-        public List<string> Roles { get; set; } = new List<string>();
+        public ApplicationUser ApplicationUser { get; set; }
+        public IList<string> Roles { get; set; } // List of roles
     }
 }
 

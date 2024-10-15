@@ -165,24 +165,29 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="AllCourses" asp-action="CoursesList">All Courses</a>
-                        </li>
+                        @if (User.IsInRole("Student") || User.IsInRole("Admin"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="AllCourses" asp-action="CoursesList">All Courses</a>
+                            </li>
+                        }
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="ContactUs" asp-action="Contact">Contact Us</a>
                         </li>
-                        @if (User.Identity.IsAuthenticated)
+                        @if (User.IsInRole("Admin"))
                         {
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="UserManagement" asp-action="DisplayUsers">User Management</a>
                             </li>
                         }
-                        @if (User.Identity.IsAuthenticated)
+                        
+                        @if (User.IsInRole("Instructor"))
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Instructor" asp-action="Index">Instructor</a>
+                                <a class="nav-link" asp-controller="Instructor" asp-action="MyCourses">My Courses</a>
                             </li>
                         }
+
                         @if (User.Identity.IsAuthenticated)
                         {
                             <button type="button" id="btn-account">

@@ -17,103 +17,103 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = LearnIn
 build_property.RootNamespace = LearnIn
-build_property.ProjectDir = C:\Users\salma\source\repos\OnlineLearningPlatform\LearnIn\
+build_property.ProjectDir = D:\.Net\DEPI\Final Project\LearnIn\LearnIn\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\salma\source\repos\OnlineLearningPlatform\LearnIn
+build_property.MSBuildProjectDirectory = D:\.Net\DEPI\Final Project\LearnIn\LearnIn
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/salma/source/repos/OnlineLearningPlatform/LearnIn/Views/Account/LogIn.cshtml]
+[D:/.Net/DEPI/Final Project/LearnIn/LearnIn/Views/Account/LogIn.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dJbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/salma/source/repos/OnlineLearningPlatform/LearnIn/Views/Account/SignUp.cshtml]
+[D:/.Net/DEPI/Final Project/LearnIn/LearnIn/Views/Account/SignUp.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxTaWduVXAuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/salma/source/repos/OnlineLearningPlatform/LearnIn/Views/AllCourses/CoursesList.cshtml]
+[D:/.Net/DEPI/Final Project/LearnIn/LearnIn/Views/AllCourses/CoursesList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWxsQ291cnNlc1xDb3Vyc2VzTGlzdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/salma/source/repos/OnlineLearningPlatform/LearnIn/Views/AllCourses/Create.cshtml]
+[D:/.Net/DEPI/Final Project/LearnIn/LearnIn/Views/AllCourses/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWxsQ291cnNlc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/salma/source/repos/OnlineLearningPlatform/LearnIn/Views/ContactUs/Contact.cshtml]
+[D:/.Net/DEPI/Final Project/LearnIn/LearnIn/Views/ContactUs/Contact.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFVzXENvbnRhY3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/salma/source/repos/OnlineLearningPlatform/LearnIn/Views/Home/Index.cshtml]
+[D:/.Net/DEPI/Final Project/LearnIn/LearnIn/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/salma/source/repos/OnlineLearningPlatform/LearnIn/Views/Home/Privacy.cshtml]
+[D:/.Net/DEPI/Final Project/LearnIn/LearnIn/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/salma/source/repos/OnlineLearningPlatform/LearnIn/Views/Instructor/AddCourse.cshtml]
+[D:/.Net/DEPI/Final Project/LearnIn/LearnIn/Views/Instructor/AddCourse.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdHJ1Y3RvclxBZGRDb3Vyc2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/salma/source/repos/OnlineLearningPlatform/LearnIn/Views/Instructor/Courses.cshtml]
+[D:/.Net/DEPI/Final Project/LearnIn/LearnIn/Views/Instructor/Courses.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdHJ1Y3RvclxDb3Vyc2VzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/salma/source/repos/OnlineLearningPlatform/LearnIn/Views/Instructor/EditProfile.cshtml]
+[D:/.Net/DEPI/Final Project/LearnIn/LearnIn/Views/Instructor/EditProfile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdHJ1Y3RvclxFZGl0UHJvZmlsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/salma/source/repos/OnlineLearningPlatform/LearnIn/Views/Instructor/UserProfile.cshtml]
+[D:/.Net/DEPI/Final Project/LearnIn/LearnIn/Views/Instructor/UserProfile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdHJ1Y3RvclxVc2VyUHJvZmlsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/salma/source/repos/OnlineLearningPlatform/LearnIn/Views/Shared/Error.cshtml]
+[D:/.Net/DEPI/Final Project/LearnIn/LearnIn/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/salma/source/repos/OnlineLearningPlatform/LearnIn/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/.Net/DEPI/Final Project/LearnIn/LearnIn/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/salma/source/repos/OnlineLearningPlatform/LearnIn/Views/UserManagement/AddRole.cshtml]
+[D:/.Net/DEPI/Final Project/LearnIn/LearnIn/Views/UserManagement/AddRole.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlck1hbmFnZW1lbnRcQWRkUm9sZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/salma/source/repos/OnlineLearningPlatform/LearnIn/Views/UserManagement/AssignRole.cshtml]
+[D:/.Net/DEPI/Final Project/LearnIn/LearnIn/Views/UserManagement/AssignRole.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlck1hbmFnZW1lbnRcQXNzaWduUm9sZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/salma/source/repos/OnlineLearningPlatform/LearnIn/Views/UserManagement/DeleteUser.cshtml]
+[D:/.Net/DEPI/Final Project/LearnIn/LearnIn/Views/UserManagement/DeleteUser.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlck1hbmFnZW1lbnRcRGVsZXRlVXNlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/salma/source/repos/OnlineLearningPlatform/LearnIn/Views/UserManagement/DisplayUsers.cshtml]
+[D:/.Net/DEPI/Final Project/LearnIn/LearnIn/Views/UserManagement/DisplayUsers.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlck1hbmFnZW1lbnRcRGlzcGxheVVzZXJzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/salma/source/repos/OnlineLearningPlatform/LearnIn/Views/UserManagement/EditUser.cshtml]
+[D:/.Net/DEPI/Final Project/LearnIn/LearnIn/Views/UserManagement/EditUser.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlck1hbmFnZW1lbnRcRWRpdFVzZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/salma/source/repos/OnlineLearningPlatform/LearnIn/Views/UserProfile/EditProfile.cshtml]
+[D:/.Net/DEPI/Final Project/LearnIn/LearnIn/Views/UserProfile/EditProfile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclByb2ZpbGVcRWRpdFByb2ZpbGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/salma/source/repos/OnlineLearningPlatform/LearnIn/Views/UserProfile/UserProfile.cshtml]
+[D:/.Net/DEPI/Final Project/LearnIn/LearnIn/Views/UserProfile/UserProfile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclByb2ZpbGVcVXNlclByb2ZpbGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/salma/source/repos/OnlineLearningPlatform/LearnIn/Views/_ViewImports.cshtml]
+[D:/.Net/DEPI/Final Project/LearnIn/LearnIn/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/salma/source/repos/OnlineLearningPlatform/LearnIn/Views/_ViewStart.cshtml]
+[D:/.Net/DEPI/Final Project/LearnIn/LearnIn/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/salma/source/repos/OnlineLearningPlatform/LearnIn/Views/Shared/_Layout.cshtml]
+[D:/.Net/DEPI/Final Project/LearnIn/LearnIn/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-tdbzeppgab
