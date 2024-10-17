@@ -1,0 +1,31 @@
+﻿@{
+    var courses = ViewBag.Courses as List<LearnIn.Models.Course>;
+}
+
+<h1>All Courses</h1>
+<ul>
+    @foreach (var course in courses)
+    {
+        <li>@course.Title - @course.Description</li>
+    }
+</ul>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Category</th>
+            <th>Instructor</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var course in Model)
+        {
+            <tr>
+                <td>@course.Title</td>
+                <td>@course.Category</td>
+                <td>@course.ApplicationUser.UserName</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -122,22 +122,22 @@ namespace LearnIn.Controllers
 
             return View();
         }
-        //-----------------------------------------------//
-        public async Task<IActionResult> RedirectBasedOnRole()
-        {
-            var user = await _userManager.GetUserAsync(User);
+        //----------------------RedirectBasedOnRole-------------------------//
+        //public async Task<IActionResult> RedirectBasedOnRole()
+        //{
+        //    var user = await _userManager.GetUserAsync(User);
 
-            if (await _userManager.IsInRoleAsync(user, "Instructor"))
-            {
-                return RedirectToAction("InstructorDashboard", "Instructor");
-            }
-            else if (await _userManager.IsInRoleAsync(user, "Student"))
-            {
-                return RedirectToAction("StudentDashboard", "Student");
-            }
+        //    if (await _userManager.IsInRoleAsync(user, "Instructor"))
+        //    {
+        //        return RedirectToAction("InstructorDashboard", "Instructor");
+        //    }
+        //    else if (await _userManager.IsInRoleAsync(user, "Student"))
+        //    {
+        //        return RedirectToAction("StudentDashboard", "Student");
+        //    }
 
-            return RedirectToAction("Index", "Home");
-        }
+        //    return RedirectToAction("Index", "Home");
+        //}
 
 
         //-------------------Log Out---------------------//

@@ -1,26 +1,39 @@
 ﻿@model IEnumerable<LearnIn.Models.Course>
 
-<h2>My Courses</h2>
+<h1>My Courses</h1>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>Title</th>
-            <th>Description</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var course in Model)
-        {
+@if (Model != null && Model.Any())
+{
+    <table class="table">
+        <thead>
             <tr>
-                <td>@course.Title</td>
-                <td>@course.Description</td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@course.CourseId">Edit</a> |
-                    <a asp-action="Delete" asp-route-id="@course.CourseId">Delete</a>
-                </td>
+                <th>Title</th>
+                <th>Category</th>
+                <th>Duration</th>
+                <th>Topics</th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var course in Model)
+            {
+                <tr>
+                    <td>@course.Title</td>
+                    <td>@course.Category</td>
+                    <td>@course.Duration hours</td>
+                    <td>
+                        <ul>
+                            @foreach (var topic in course.Topics)
+                            {
+                                <li>@topic.Name</li>
+                            }
+                        </ul>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No courses found.</p>
+}

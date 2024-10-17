@@ -10,11 +10,11 @@ namespace LearnIn.Models
         public int Duration { get; set; }
         public string? Image { get; set; }
         public string Category { get; set; }
-        [ForeignKey("InstructorId")]
-        public string InstructorId { get; set; }
+        [ForeignKey("UserId")]
+        public string UserId { get; set; }
+        public ApplicationUser ApplicationUser { get; set; }
         public ICollection<Enroll> Enrolls { get; set; } = new List<Enroll>();    
-        public ICollection<Teach> Teaches { get; set; } = new List<Teach>();
-        public ICollection<ApplicationUser> Instructor { get; set; }
         public ICollection<Topic> Topics { get; set; } = new List<Topic>();
+
     }
 }

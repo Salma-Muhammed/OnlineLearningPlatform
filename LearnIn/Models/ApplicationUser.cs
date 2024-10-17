@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Runtime.InteropServices;
 
 namespace LearnIn.Models
@@ -8,9 +9,8 @@ namespace LearnIn.Models
     {
         public string? Image { get; set; }
         public int Age { get; set; }
-        public virtual ICollection<Course> Courses { get; set; } = new List<Course>();
         public virtual ICollection<Enroll> Enrolls { get; set; } = new List<Enroll>();
-        public virtual ICollection<Teach> Teaches { get; set; } = new List<Teach>();
+        public virtual ICollection<Course> Courses { get; set; } = new List<Course>();
 
         [Required]
         [StringLength(100, MinimumLength = 4, ErrorMessage = "Username must be between 4 and 100 characters.")]

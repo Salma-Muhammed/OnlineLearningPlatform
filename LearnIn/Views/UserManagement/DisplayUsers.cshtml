@@ -32,12 +32,18 @@
                         <!-- Edit Button -->
                         <a asp-action="EditUser" asp-route-id="@user.UserId" style="display:inline-block"  class="btn btn-primary btn-sm">
                             Edit
-                        </a>
+                        </a>                       
                         <!-- Delete Button -->
                         <form asp-action="DeleteUser" method="post" onsubmit="return confirm('Are you sure you want to delete this user?');">
                             <input type="hidden" name="id" value="@user.UserId" />
                             <button style="display:inline-block" type="submit" class="btn btn-danger">Delete</button>
                         </form>
+                        <a asp-action="AssignRole" asp-route-id="@user.UserId" style="display:inline-block" class="btn btn-primary btn-sm">
+                            AssignRole
+                        </a>
+                        <a asp-action="" asp-route-id="@user.UserId" style="display:inline-block" class="btn btn-primary btn-sm">
+                            Edit
+                        </a>
                     </td>
                 </tr>
             }

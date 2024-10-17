@@ -12,9 +12,7 @@ namespace LearnIn.Data
         public DbSet<ApplicationUser> ApplicationUsers { get; set; }
         public DbSet<Course> Courses { get; set; }
         public DbSet<Enroll> Enrolls { get; set; }
-        public DbSet<Teach> Teaches { get; set; }
-        public DbSet<Content> Contents { get; set; }
-        public DbSet<ContactUs> ContactUs { get; set; }
+        public DbSet<TopicContent> TopicContents { get; set; }
         public DbSet<Topic> Topics{ get; set; }
 
 
@@ -26,40 +24,34 @@ namespace LearnIn.Data
             builder.Entity<Enroll>()
                 .HasKey(e => new { e.UserId, e.CourseId });
 
-            // Teach: Composite key
-            builder.Entity<Teach>()
-                .HasKey(t => new { t.UserId, t.CourseId });                 
+            // Relationships
+            builder.Entity<Course>()
+                .HasOne(c => c.ApplicationUser)
+                .WithMany(u => u.Courses)
+                .HasForeignKey(c => c.UserId);
 
             builder.Entity<Enroll>()
                 .HasOne(e => e.ApplicationUser)
-                .WithMany(a => a.Enrolls)
-                .HasForeignKey(e => e.UserId);
+                .WithMany(u => u.Enrolls)
+                .HasForeignKey(e => e.UserId)
+                .OnDelete(DeleteBehavior.Restrict);
 
-            builder.Entity<Teach>()
-            .HasOne(t => t.Instructor)
-            .WithMany(u => u.Teaches)
-            .HasForeignKey(t => t.UserId);
+            builder.Entity<Enroll>()
+                .HasOne(e => e.Course)
+                .WithMany(c => c.Enrolls)
+                .HasForeignKey(e => e.CourseId)
+                .OnDelete(DeleteBehavior.Restrict);
 
-            builder.Entity<Teach>()
-                .HasOne(t => t.Course)
-                .WithMany(c => c.Teaches)
-                .HasForeignKey(t => t.CourseId);
-
-            builder.Entity<ContactUs>()
-                .HasOne(c => c.ApplicationUser) // Assuming one user per message
-                .WithMany()                     // No navigation property in ApplicationUser
-                .HasForeignKey(c => c.UserId)
-                .OnDelete(DeleteBehavior.Cascade);  // If a user is deleted, delete their messages
 
             builder.Entity<Topic>()
-                .HasMany(t => t.Contents)
+                .HasMany(t => t.TopicContents)
                 .WithOne(c => c.Topic)
                 .HasForeignKey(c => c.TopicId)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            builder.Entity<Content>()
+            builder.Entity<TopicContent>()
                .HasOne(c => c.Topic)
-               .WithMany(t => t.Contents)
+               .WithMany(t => t.TopicContents)
                .HasForeignKey(c => c.TopicId)
                .OnDelete(DeleteBehavior.Cascade);
 

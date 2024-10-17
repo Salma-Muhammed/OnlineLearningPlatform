@@ -1,15 +1,17 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Identity;
-using LearnIn.Data;
+﻿using LearnIn.Data;
 using LearnIn.Models;
-using System.IO;
-using System.Threading.Tasks;
-using System.Linq;
+using LearnIn.ViewModels;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System.Security.Claims;
+using System;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace LearnIn.Controllers
 {
+    [Authorize(Roles = "Instructor")]
     public class CoursesController : Controller
     {
         private readonly LearnInContext _context;
@@ -21,171 +23,125 @@ namespace LearnIn.Controllers
             _userManager = userManager;
         }
 
-        // GET: Courses
-        public async Task<IActionResult> CoursesList()
+        // GET: Courses/AllCourses
+        [AllowAnonymous]
+        public async Task<IActionResult> AllCourses()
         {
-            var courses = await _context.Courses.ToListAsync(); // Get all courses for display to users
-            return View(courses);
-        }
-
-        // GET: Instructor's Courses
-        public async Task<IActionResult> MyCourses()
-        {
-            var user = await _userManager.GetUserAsync(User); // Get the currently logged-in user
-
-            if (user == null)
-            {
-                return RedirectToAction("Login", "Account"); // Redirect to login if no user is found
-            }
-
-            // Retrieve courses taught by the instructor
-            var instructorCourses = await _context.Teaches
-                .Include(t => t.Course) // Include course data
-                .Where(t => t.UserId == user.Id)
-                .Select(t => t.Course) // Select the Course objects
+            var courses = await _context.Courses
+                .Include(c => c.ApplicationUser)
                 .ToListAsync();
 
-            return View(instructorCourses); // Return the list of courses for the instructor
-        }
-
-
-        // GET: Courses/CreateCourse
-        public async Task<IActionResult> CreateCourse()
-        {
-            var user = await _userManager.GetUserAsync(User);
-            ViewBag.InstructorId = user?.Id; // Get the instructor's ID for later use
+            ViewBag.Courses = courses;
             return View();
         }
 
-        // POST: Courses/CreateCourse
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> CreateCourse(Course course, IFormFile imageFile)
+        // GET: Courses/MyCourses
+        public async Task<IActionResult> MyCourses()
         {
-            if (ModelState.IsValid)
-            {
-                // Get the current instructor's ID as a string
-                var instructorId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            var userId = _userManager.GetUserId(User);
+            var courses = await _context.Courses
+                .Where(c => c.UserId == userId)
+                .Include(c => c.Topics)
+                .ToListAsync();
 
-                // Save the image if uploaded
-                if (imageFile != null && imageFile.Length > 0)
-                {
-                    var fileName = Path.GetFileName(imageFile.FileName);
-                    var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images", fileName);
-
-                    using (var stream = new FileStream(filePath, FileMode.Create))
-                    {
-                        await imageFile.CopyToAsync(stream);
-                    }
-
-                    course.Image = "/images/" + fileName; // Store the path in the model
-                }
-
-                // Set the instructor ID as a string
-                course.InstructorId = instructorId; // Assign the instructor ID directly
-
-                // Add the course to the database
-                _context.Courses.Add(course);
-                await _context.SaveChangesAsync();
-
-                return RedirectToAction("MyCourses"); // Redirect to the instructor's courses
-            }
-
-            return View(course); // Return the view with the course model if invalid
+            ViewBag.MyCourses = courses;
+            return View();
         }
 
-
-
-
-        // GET: Courses/Edit/5
-        public async Task<IActionResult> Edit(int id)
+        [HttpGet]
+        public IActionResult CreateCourse()
         {
-            var course = await _context.Courses.FindAsync(id);
-            if (course == null)
-            {
-                return NotFound();
-            }
-
-            return View(course);
+            var model = new CreateCourseViewModel(); // Initialize your model
+            ViewBag.Users = _userManager.Users.ToList(); // Assuming you want to pass users to the view
+            return View(model);
         }
 
-        // POST: Courses/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, Course course, IFormFile imageFile)
+        public async Task<IActionResult> CreateCourse(CreateCourseViewModel model)
         {
-            if (id != course.CourseId)
-            {
-                return NotFound();
-            }
-
             if (ModelState.IsValid)
             {
                 try
                 {
-                    if (imageFile != null && imageFile.Length > 0)
+                    var userId = _userManager.GetUserId(User);
+                    var course = new Course
                     {
-                        var fileName = Path.GetFileName(imageFile.FileName);
-                        var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images", fileName);
+                        Title = model.Title,
+                        Description = model.Description,
+                        Duration = model.Duration,
+                        Category = model.Category,
+                        UserId = userId
+                    };
+
+                    // Handle file upload
+                    if (model.Image != null && model.Image.Length > 0)
+                    {
+                        var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images", model.Image.FileName);
 
                         using (var stream = new FileStream(filePath, FileMode.Create))
                         {
-                            await imageFile.CopyToAsync(stream);
+                            await model.Image.CopyToAsync(stream);
                         }
 
-                        course.Image = "/images/" + fileName; // Update the image path
+                        course.Image = model.Image.FileName;
                     }
 
-                    _context.Update(course);
+                    _context.Courses.Add(course);
                     await _context.SaveChangesAsync();
+
+                    // Add Topics and their contents
+                    if (model.Topics != null && model.Topics.Count > 0)
+                    {
+                        foreach (var topicViewModel in model.Topics)
+                        {
+                            var newTopic = new Topic
+                            {
+                                Name = topicViewModel.Name,
+                                CourseId = course.CourseId // Associate with the course
+                            };
+
+                            _context.Topics.Add(newTopic);
+                            await _context.SaveChangesAsync(); // Save topic to get the Id for TopicContent
+
+                            // Now add TopicContents if they exist
+                            if (topicViewModel.TopicContents != null)
+                            {
+                                foreach (var content in topicViewModel.TopicContents)
+                                {
+                                    var topicContent = new TopicContent
+                                    {
+                                        Content = content.Content,
+                                        ContentType = (Models.ContentType)content.ContentType, // Cast or map here
+                                        TopicId = newTopic.Id // Associate with the topic
+                                    };
+                                    _context.TopicContents.Add(topicContent);
+                                }
+                            }
+                        }
+                        await _context.SaveChangesAsync(); // Save all topic contents
+                    }
+
+                    return RedirectToAction(nameof(MyCourses));
                 }
-                catch (DbUpdateConcurrencyException)
+                catch (Exception ex)
                 {
-                    if (!CourseExists(course.CourseId))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
+                    ModelState.AddModelError("", "An error occurred while saving the course. Please try again.");
                 }
-                return RedirectToAction(nameof(Index));
             }
-
-            return View(course);
-        }
-
-        // GET: Courses/Delete/5
-        public async Task<IActionResult> Delete(int id)
-        {
-            var course = await _context.Courses.FindAsync(id);
-            if (course == null)
+            else
             {
-                return NotFound();
+                ModelState.AddModelError("", "Model validation failed. Please check your inputs.");
             }
 
-            return View(course);
+            ViewBag.Users = _userManager.Users.ToList(); // Ensure to repopulate in case of validation errors
+            return View(model);
         }
 
-        // POST: Courses/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            var course = await _context.Courses.FindAsync(id);
-            if (course != null)
-            {
-                _context.Courses.Remove(course);
-                await _context.SaveChangesAsync();
-            }
 
-            return RedirectToAction(nameof(Index));
-        }
 
-        private bool CourseExists(int id)
-        {
-            return _context.Courses.Any(e => e.CourseId == id);
-        }
+
+
+
     }
 }

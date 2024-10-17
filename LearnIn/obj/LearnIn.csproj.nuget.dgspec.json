@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\.Net\\DEPI\\Final Project\\LearnIn\\LearnIn\\LearnIn.csproj": {}
+    "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\LearnIn.csproj": {}
   },
   "projects": {
-    "D:\\.Net\\DEPI\\Final Project\\LearnIn\\LearnIn\\LearnIn.csproj": {
+    "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\LearnIn.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\.Net\\DEPI\\Final Project\\LearnIn\\LearnIn\\LearnIn.csproj",
+        "projectUniqueName": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\LearnIn.csproj",
         "projectName": "LearnIn",
-        "projectPath": "D:\\.Net\\DEPI\\Final Project\\LearnIn\\LearnIn\\LearnIn.csproj",
-        "packagesPath": "C:\\Users\\suhai\\.nuget\\packages\\",
-        "outputPath": "D:\\.Net\\DEPI\\Final Project\\LearnIn\\LearnIn\\obj\\",
+        "projectPath": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\LearnIn.csproj",
+        "packagesPath": "C:\\Users\\salma\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\salma\\source\\repos\\OnlineLearningPlatform\\LearnIn\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\suhai\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\salma\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -48,7 +48,13 @@
           "dependencies": {
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[8.0.8, )"
+              "version": "[8.0.10, )"
+            },
+            "Microsoft.CodeAnalysis.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.11.0, )"
             },
             "Microsoft.Data.SqlClient": {
               "target": "Package",
@@ -56,17 +62,17 @@
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[8.0.8, )"
+              "version": "[8.0.10, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[8.0.8, )"
+              "version": "[8.0.10, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.8, )"
+              "version": "[8.0.10, )"
             },
             "Microsoft.Extensions.Configuration": {
               "target": "Package",
@@ -74,7 +80,7 @@
             },
             "Microsoft.Extensions.Configuration.Json": {
               "target": "Package",
-              "version": "[8.0.0, )"
+              "version": "[8.0.1, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
@@ -100,7 +106,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

@@ -9,6 +9,6 @@ namespace LearnIn.Models
         [ForeignKey("CourseId")]
         public int CourseId { get; set; }
         public virtual Course Course { get; set; }
-        public ICollection<Content> Contents { get; set; } = new List<Content>();
+        public ICollection<TopicContent> TopicContents { get; set; } = new List<TopicContent>();
     }
 }

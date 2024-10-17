@@ -1,13 +1,19 @@
 ﻿@model IEnumerable<LearnIn.Models.Course>
 
+@{
+    ViewData["Title"] = "All Courses";
+}
+
 <h2>All Courses</h2>
-<table>
+
+<table class="table table-striped">
     <thead>
         <tr>
             <th>Title</th>
-            <th>Description</th>
-            <th>Duration</th>
             <th>Category</th>
+            <th>Duration (hours)</th>
+            <th>Instructor</th>
+            <th></th> <!-- Action column for viewing details -->
         </tr>
     </thead>
     <tbody>
@@ -15,13 +21,15 @@
         {
             <tr>
                 <td>@course.Title</td>
-                <td>@course.Description</td>
+                <td>@course.Category</td> <!-- Assuming a navigation property Category with Name -->
                 <td>@course.Duration</td>
-                <td>@course.Category</td>
+                <td>@course.ApplicationUser?.UserName</td> <!-- Assuming Instructor is a navigation property -->
                 <td>
-                    <a asp-action="Details" asp-route-id="@course.CourseId">Details</a>
+                    <a href="@Url.Action("Details", "Courses", new { id = course.CourseId })" class="btn btn-primary">View</a>
                 </td>
             </tr>
         }
     </tbody>
 </table>
+
+<a href="@Url.Action("CreateCourse", "Courses")" class="btn btn-success">Create New Course</a>

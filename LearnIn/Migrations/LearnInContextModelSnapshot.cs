@@ -17,25 +17,10 @@ namespace LearnIn.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.8")
+                .HasAnnotation("ProductVersion", "8.0.10")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
-
-            modelBuilder.Entity("ApplicationUserCourse", b =>
-                {
-                    b.Property<int>("CoursesCourseId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("InstructorId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("CoursesCourseId", "InstructorId");
-
-                    b.HasIndex("InstructorId");
-
-                    b.ToTable("ApplicationUserCourse");
-                });
 
             modelBuilder.Entity("LearnIn.Models.ApplicationUser", b =>
                 {
@@ -111,62 +96,6 @@ namespace LearnIn.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
-            modelBuilder.Entity("LearnIn.Models.ContactUs", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Message")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("UserId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("UserName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("ContactUs");
-                });
-
-            modelBuilder.Entity("LearnIn.Models.Content", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("ContentType")
-                        .HasColumnType("int");
-
-                    b.Property<string>("TopicContent")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("TopicId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("TopicId");
-
-                    b.ToTable("Contents");
-                });
-
             modelBuilder.Entity("LearnIn.Models.Course", b =>
                 {
                     b.Property<int>("CourseId")
@@ -189,15 +118,17 @@ namespace LearnIn.Migrations
                     b.Property<string>("Image")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("InstructorId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
                     b.HasKey("CourseId");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Courses");
                 });
@@ -224,24 +155,6 @@ namespace LearnIn.Migrations
                     b.ToTable("Enrolls");
                 });
 
-            modelBuilder.Entity("LearnIn.Models.Teach", b =>
-                {
-                    b.Property<string>("UserId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<int>("CourseId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Id")
-                        .HasColumnType("int");
-
-                    b.HasKey("UserId", "CourseId");
-
-                    b.HasIndex("CourseId");
-
-                    b.ToTable("Teaches");
-                });
-
             modelBuilder.Entity("LearnIn.Models.Topic", b =>
                 {
                     b.Property<int>("Id")
@@ -262,6 +175,31 @@ namespace LearnIn.Migrations
                     b.HasIndex("CourseId");
 
                     b.ToTable("Topics");
+                });
+
+            modelBuilder.Entity("LearnIn.Models.TopicContent", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Content")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ContentType")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TopicId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TopicId");
+
+                    b.ToTable("TopicContents");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -293,19 +231,19 @@ namespace LearnIn.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "f0624519-0751-452e-81b8-005c2b4b811c",
+                            Id = "3698cd04-701c-4f21-a0ba-0721407844db",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "ef364cf2-9f29-4495-a072-586c872d3b72",
+                            Id = "253cff31-1c03-48d2-b8c4-a1c2fd369996",
                             Name = "Student",
                             NormalizedName = "STUDENT"
                         },
                         new
                         {
-                            Id = "5f7f9421-a7b1-4c0e-917e-36ef568134a9",
+                            Id = "896a91d5-f531-4f07-b17b-4881ef13ccdb",
                             Name = "Instructor",
                             NormalizedName = "INSTRUCTOR"
                         });
@@ -417,41 +355,15 @@ namespace LearnIn.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("ApplicationUserCourse", b =>
-                {
-                    b.HasOne("LearnIn.Models.Course", null)
-                        .WithMany()
-                        .HasForeignKey("CoursesCourseId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("LearnIn.Models.ApplicationUser", null)
-                        .WithMany()
-                        .HasForeignKey("InstructorId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("LearnIn.Models.ContactUs", b =>
+            modelBuilder.Entity("LearnIn.Models.Course", b =>
                 {
                     b.HasOne("LearnIn.Models.ApplicationUser", "ApplicationUser")
-                        .WithMany()
+                        .WithMany("Courses")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("ApplicationUser");
-                });
-
-            modelBuilder.Entity("LearnIn.Models.Content", b =>
-                {
-                    b.HasOne("LearnIn.Models.Topic", "Topic")
-                        .WithMany("Contents")
-                        .HasForeignKey("TopicId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Topic");
                 });
 
             modelBuilder.Entity("LearnIn.Models.Enroll", b =>
@@ -459,32 +371,13 @@ namespace LearnIn.Migrations
                     b.HasOne("LearnIn.Models.Course", "Course")
                         .WithMany("Enrolls")
                         .HasForeignKey("CourseId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("LearnIn.Models.ApplicationUser", "ApplicationUser")
                         .WithMany("Enrolls")
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("ApplicationUser");
-
-                    b.Navigation("Course");
-                });
-
-            modelBuilder.Entity("LearnIn.Models.Teach", b =>
-                {
-                    b.HasOne("LearnIn.Models.Course", "Course")
-                        .WithMany("Teaches")
-                        .HasForeignKey("CourseId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("LearnIn.Models.ApplicationUser", "ApplicationUser")
-                        .WithMany("Teaches")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("ApplicationUser");
@@ -501,6 +394,17 @@ namespace LearnIn.Migrations
                         .IsRequired();
 
                     b.Navigation("Course");
+                });
+
+            modelBuilder.Entity("LearnIn.Models.TopicContent", b =>
+                {
+                    b.HasOne("LearnIn.Models.Topic", "Topic")
+                        .WithMany("TopicContents")
+                        .HasForeignKey("TopicId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Topic");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -556,23 +460,21 @@ namespace LearnIn.Migrations
 
             modelBuilder.Entity("LearnIn.Models.ApplicationUser", b =>
                 {
-                    b.Navigation("Enrolls");
+                    b.Navigation("Courses");
 
-                    b.Navigation("Teaches");
+                    b.Navigation("Enrolls");
                 });
 
             modelBuilder.Entity("LearnIn.Models.Course", b =>
                 {
                     b.Navigation("Enrolls");
 
-                    b.Navigation("Teaches");
-
                     b.Navigation("Topics");
                 });
 
             modelBuilder.Entity("LearnIn.Models.Topic", b =>
                 {
-                    b.Navigation("Contents");
+                    b.Navigation("TopicContents");
                 });
 #pragma warning restore 612, 618
         }

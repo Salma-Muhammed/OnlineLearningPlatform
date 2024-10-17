@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace LearnIn.Controllers
 {
-    [Authorize(Roles = "Administrator")]
+    [Authorize(Roles = "Admin")]
     public class UserManagementController : Controller
     {
         private readonly UserManager<ApplicationUser> _userManager;
