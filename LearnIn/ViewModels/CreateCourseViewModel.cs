@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Http;
+using LearnIn.Models;
+
 namespace LearnIn.ViewModels
 {
     public class CreateCourseViewModel
@@ -21,6 +23,7 @@ namespace LearnIn.ViewModels
         [Required]
         public string Category { get; set; }
 
+        public ApplicationUser ApplicationUser { get; set; }
         public List<TopicViewModel> Topics { get; set; } = new List<TopicViewModel>();
     }
 

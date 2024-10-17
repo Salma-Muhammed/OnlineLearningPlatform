@@ -60,8 +60,6 @@ namespace LearnIn.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> CreateCourse(CreateCourseViewModel model)
         {
-            if (ModelState.IsValid)
-            {
                 try
                 {
                     var userId = _userManager.GetUserId(User);
@@ -75,52 +73,52 @@ namespace LearnIn.Controllers
                     };
 
                     // Handle file upload
-                    if (model.Image != null && model.Image.Length > 0)
-                    {
-                        var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images", model.Image.FileName);
+                    //if (model.Image != null && model.Image.Length > 0)
+                    //{
+                    //    var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images", model.Image.FileName);
 
-                        using (var stream = new FileStream(filePath, FileMode.Create))
-                        {
-                            await model.Image.CopyToAsync(stream);
-                        }
+                    //    using (var stream = new FileStream(filePath, FileMode.Create))
+                    //    {
+                    //        await model.Image.CopyToAsync(stream);
+                    //    }
 
-                        course.Image = model.Image.FileName;
-                    }
+                    //    course.Image = model.Image.FileName;
+                    //}
 
                     _context.Courses.Add(course);
                     await _context.SaveChangesAsync();
 
                     // Add Topics and their contents
-                    if (model.Topics != null && model.Topics.Count > 0)
-                    {
-                        foreach (var topicViewModel in model.Topics)
-                        {
-                            var newTopic = new Topic
-                            {
-                                Name = topicViewModel.Name,
-                                CourseId = course.CourseId // Associate with the course
-                            };
+                    //if (model.Topics != null && model.Topics.Count > 0)
+                    //{
+                    //    foreach (var topicViewModel in model.Topics)
+                    //    {
+                    //        var newTopic = new Topic
+                    //        {
+                    //            Name = topicViewModel.Name,
+                    //            CourseId = course.CourseId // Associate with the course
+                    //        };
 
-                            _context.Topics.Add(newTopic);
-                            await _context.SaveChangesAsync(); // Save topic to get the Id for TopicContent
+                    //        _context.Topics.Add(newTopic);
+                    //        await _context.SaveChangesAsync(); // Save topic to get the Id for TopicContent
 
-                            // Now add TopicContents if they exist
-                            if (topicViewModel.TopicContents != null)
-                            {
-                                foreach (var content in topicViewModel.TopicContents)
-                                {
-                                    var topicContent = new TopicContent
-                                    {
-                                        Content = content.Content,
-                                        ContentType = (Models.ContentType)content.ContentType, // Cast or map here
-                                        TopicId = newTopic.Id // Associate with the topic
-                                    };
-                                    _context.TopicContents.Add(topicContent);
-                                }
-                            }
-                        }
-                        await _context.SaveChangesAsync(); // Save all topic contents
-                    }
+                    //        // Now add TopicContents if they exist
+                    //        if (topicViewModel.TopicContents != null)
+                    //        {
+                    //            foreach (var content in topicViewModel.TopicContents)
+                    //            {
+                    //                var topicContent = new TopicContent
+                    //                {
+                    //                    Content = content.Content,
+                    //                    ContentType = (Models.ContentType)content.ContentType, // Cast or map here
+                    //                    TopicId = newTopic.Id // Associate with the topic
+                    //                };
+                    //                _context.TopicContents.Add(topicContent);
+                    //            }
+                    //        }
+                    //    }
+                    //    await _context.SaveChangesAsync(); // Save all topic contents
+                    //}
 
                     return RedirectToAction(nameof(MyCourses));
                 }
@@ -128,13 +126,7 @@ namespace LearnIn.Controllers
                 {
                     ModelState.AddModelError("", "An error occurred while saving the course. Please try again.");
                 }
-            }
-            else
-            {
-                ModelState.AddModelError("", "Model validation failed. Please check your inputs.");
-            }
-
-            ViewBag.Users = _userManager.Users.ToList(); // Ensure to repopulate in case of validation errors
+            
             return View(model);
         }
 

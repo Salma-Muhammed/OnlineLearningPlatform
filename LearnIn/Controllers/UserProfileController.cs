@@ -76,31 +76,25 @@ namespace LearnIn.Controllers
                 return NotFound();
             }
 
-            // Check if the form model state is valid
-            if (!ModelState.IsValid)
-            {
-                return View(model);
-            }
-            
             // Update the user's profile information with the new data
             userInfo.UserName = model.UserName;
             userInfo.Email = model.Email;
             userInfo.PhoneNumber = model.PhoneNumber;
 
             //handle profile picture upload if provided
-            //if (ImageFile != null && ImageFile.Length > 0)
-            //{
-            //    var fileName = Path.GetFileName(ImageFile.FileName);
-            //    var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images", fileName);
+            if (ImageFile != null && ImageFile.Length > 0)
+                {
+                    var fileName = Path.GetFileName(ImageFile.FileName);
+                    var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images", fileName);
 
-            //    using (var stream = new FileStream(filePath, FileMode.Create))
-            //    {
-            //        await ImageFile.CopyToAsync(stream);
-            //    }
+                    using (var stream = new FileStream(filePath, FileMode.Create))
+                    {
+                        await ImageFile.CopyToAsync(stream);
+                    }
 
-            //    // Set the new image path
-            //    userInfo.Image = "/images/" + fileName;
-            //}
+                    // Set the new image path
+                    userInfo.Image = "/images/" + fileName;
+                }
 
             // Save changes to the database
             _context.Users.Update(userInfo);

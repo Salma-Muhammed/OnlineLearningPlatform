@@ -55,15 +55,7 @@
                     {
                         for (int j = 0; j < Model.Topics[i].TopicContents.Count; j++)
                         {
-                            <div class="content">
-                                <label asp-for="Topics[@i].TopicContents[@j].Content"></label>
-                                <input asp-for="Topics[@i].TopicContents[@j].Content" class="form-control" />
-                                <span asp-validation-for="Topics[@i].TopicContents[@j].Content" class="text-danger"></span>
-
-                                <label asp-for="Topics[@i].TopicContents[@j].ContentType"></label>
-                                <select asp-for="Topics[@i].TopicContents[@j].ContentType" class="form-control" asp-items="Html.GetEnumSelectList<LearnIn.Models.ContentType>()"></select>
-                                <span asp-validation-for="Topics[@i].TopicContents[@j].ContentType" class="text-danger"></span>
-                            </div>
+                            
                         }
                     }
                     else

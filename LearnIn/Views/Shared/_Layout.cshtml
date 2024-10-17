@@ -168,7 +168,7 @@
                         @if (!User.IsInRole("Instructor"))
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Courses" asp-action="CoursesList">All Courses</a>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Courses" asp-action="AllCourses">All Courses</a>
                             </li>
                         }                       
                         @if (User.IsInRole("Admin"))
