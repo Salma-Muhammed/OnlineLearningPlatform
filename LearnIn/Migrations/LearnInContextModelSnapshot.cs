@@ -30,7 +30,7 @@ namespace LearnIn.Migrations
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
 
-                    b.Property<int>("Age")
+                    b.Property<int?>("Age")
                         .HasColumnType("int");
 
                     b.Property<string>("ConcurrencyStamp")
@@ -66,7 +66,6 @@ namespace LearnIn.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PhoneNumber")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("PhoneNumberConfirmed")
@@ -231,19 +230,19 @@ namespace LearnIn.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "3698cd04-701c-4f21-a0ba-0721407844db",
+                            Id = "49931b9f-3929-4479-8646-a20420f44208",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "253cff31-1c03-48d2-b8c4-a1c2fd369996",
+                            Id = "1d590797-60a2-45f6-a802-8281b698ef71",
                             Name = "Student",
                             NormalizedName = "STUDENT"
                         },
                         new
                         {
-                            Id = "896a91d5-f531-4f07-b17b-4881ef13ccdb",
+                            Id = "485dc489-f039-417d-a8c0-d2c24080b106",
                             Name = "Instructor",
                             NormalizedName = "INSTRUCTOR"
                         });

@@ -5,27 +5,21 @@ using LearnIn.Models;
 
 namespace LearnIn.ViewModels
 {
-    public class CreateCourseViewModel
+    public class CourseViewModel
     {
-        [Required]
-        [StringLength(200)]
         public string Title { get; set; }
-
-        [Required]
         public string Description { get; set; }
-
-        [Required]
         public int Duration { get; set; }
-
-        [Required]
-        public IFormFile Image { get; set; } // Change from string to IFormFile
-
-        [Required]
         public string Category { get; set; }
 
-        public ApplicationUser ApplicationUser { get; set; }
+        // List to hold topics
         public List<TopicViewModel> Topics { get; set; } = new List<TopicViewModel>();
     }
 
-    
+    public class TopicViewModel
+    {
+        public string Name { get; set; } // Only the Name is needed for topic creation
+    }
+
+
 }

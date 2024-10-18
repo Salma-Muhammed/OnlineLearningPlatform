@@ -86,6 +86,15 @@
             text-decoration:none;
         }
 
+        #LogOut a{
+            font-weight: bold;
+            color: red;
+        }
+            /* LogOut */
+            #LogOut:hover a{
+                color: white;
+            }
+        
         /* Account button */
         #btn-account {
             color: #298EE5;
@@ -176,6 +185,9 @@
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="UserManagement" asp-action="DisplayUsers">User Management</a>
                             </li>
+                            <button type="button" id="LogOut" class="btn btn-outline-danger" style="margin-left:20px;">
+                                <a asp-area="" asp-controller="Account" asp-action="LogOut">LogOut</a>
+                            </button>
                         }
                         
                         @if (User.IsInRole("Instructor"))

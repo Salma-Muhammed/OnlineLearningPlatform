@@ -1,4 +1,4 @@
-﻿@model LearnIn.ViewModels.CreateCourseViewModel // Ensure this matches
+﻿@model LearnIn.Models.Course;
 
 @{
     ViewData["Title"] = "Create Course";
@@ -6,76 +6,273 @@
 
 <h2>Create Course</h2>
 
-<form asp-action="CreateCourse" enctype="multipart/form-data">
-    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<!-- Initial "Create Course" Button -->
+<div id="initialCreateButtonContainer">
+    <button id="initialCreateButton" class="btn btn-outline-primary" style="font-weight:bold;margin-bottom:10px;">Create Course</button>
+</div>
 
-    <div class="form-group">
-        <label asp-for="Title"></label>
-        <input asp-for="Title" class="form-control" />
-        <span asp-validation-for="Title" class="text-danger"></span>
+<!-- Tab Navigation (Initially Hidden) -->
+<ul class="nav nav-tabs" id="courseTab" role="tablist" style="display:none;">
+    <li class="nav-item">
+        <a class="nav-link" id="course-details-tab" data-toggle="tab" href="#course-details" role="tab" aria-controls="course-details" aria-selected="false" style="font-weight:bold;">Course Details</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="topics-tab" data-toggle="tab" href="#topics" role="tab" aria-controls="topics" aria-selected="false" style="font-weight:bold">Topics & Materials</a>
+    </li>
+</ul>
+
+<!-- Tab Content (Initially Hidden) -->
+<div class="tab-content" id="courseTabContent">
+    <!-- Course Details Tab -->
+    <form asp-action="CreateCourse" id="courseForm" name="courseForm" method="post">
+
+    <div class="tab-pane fade" id="course-details" role="tabpanel" aria-labelledby="course-details-tab">
+            <div class="form-group">
+                <label asp-for="Title" class="control-label" id="title"></label>
+                <input asp-for="Title" class="form-control" required minlength="3" maxlength="100" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <textarea asp-for="Description" class="form-control" required minlength="10" maxlength="500"></textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Duration" class="control-label"></label>
+                <input asp-for="Duration" class="form-control" type="number" required min="1" max="1000" />
+                <span asp-validation-for="Duration" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Category" class="control-label"></label>
+                <input asp-for="Category" class="form-control" required minlength="2" maxlength="50" />
+                <span asp-validation-for="Category" class="text-danger"></span>
+            </div>
+
+
+            <!-- Next Button -->
+            <button type="button" class="btn btn-outline-primary"  id="nextToTopics" style="font-weight:bold">Add Content</button>
+            <div class="buttons-container">
+                <a href="/Home/Index" class="btn btn-outline-danger" style="font-weight: bold;margin-left:83%">Back to Home Page</a>
+            </div>
     </div>
 
-    <div class="form-group">
-        <label asp-for="Description"></label>
-        <textarea asp-for="Description" class="form-control"></textarea>
-        <span asp-validation-for="Description" class="text-danger"></span>
-    </div>
+    <!-- Topics & Materials Tab -->
+    <div class="tab-pane fade" id="topics" role="tabpanel" aria-labelledby="topics-tab">
 
-    <div class="form-group">
-        <label asp-for="Duration"></label>
-        <input asp-for="Duration" class="form-control" />
-        <span asp-validation-for="Duration" class="text-danger"></span>
-    </div>
+            <div class="form-group">
+                <label for="topicName">Topic Name</label>
+                <input id="topicName" name="topicName" class="form-control" style="max-width:97%" />
+                <button type="button" class="btn btn-outline-primary" id="addTopicBtn" style="font-weight:bold; margin-left:89% ; margin-top:10px">Add Topic</button>
+            </div>
 
-    <div class="form-group">
-        <label asp-for="Category"></label>
-        <select asp-for="Category" class="form-control" asp-items="ViewBag.CategorySelectList"></select>
-        <span asp-validation-for="Category" class="text-danger"></span>
-    </div>
+            <div id="topicsList" class="mt-4">
+                <!-- Dynamically added topics will appear here -->
+            </div>
 
-    <div class="form-group">
-        <label asp-for="Image"></label>
-        <input asp-for="Image" type="file" class="form-control" />
-        <span asp-validation-for="Image" class="text-danger"></span>
-    </div>
-
-    <h4>Topics</h4>
-    <div id="topicsContainer">
-        @if (Model.Topics != null && Model.Topics.Count > 0)
-        {
-            for (int i = 0; i < Model.Topics.Count; i++)
-            {
-                <div class="topic">
-                    <label asp-for="Topics[@i].Name"></label>
-                    <input asp-for="Topics[@i].Name" class="form-control" />
-                    <span asp-validation-for="Topics[@i].Name" class="text-danger"></span>
-
-                    <h5>Contents</h5>
-                    @if (Model.Topics[i].TopicContents != null && Model.Topics[i].TopicContents.Count > 0)
-                    {
-                        for (int j = 0; j < Model.Topics[i].TopicContents.Count; j++)
-                        {
-                            
-                        }
-                    }
-                    else
-                    {
-                        <p>No contents available.</p>
-                    }
+            <div id="materialSection" style="display: none;">
+                <h4>Upload Material for Topic: <span id="selectedTopicName"></span></h4>
+                <div class="form-group">
+                    <label for="materialType">Material Type</label>
+                    <div>
+                        <label><input type="radio" name="contentType" value="Video" checked /> Video</label>
+                        <label><input type="radio" name="contentType" value="File" /> File</label>
+                    </div>
                 </div>
-            }
-        }
-        else
-        {
-            <p>No topics available.</p>
-        }
-    </div>
 
-    <button type="submit" class="btn btn-primary">Create Course</button>
-</form>
+                <div class="form-group">
+                    <label for="materialUpload">Upload Material</label>
+                    <input id="materialUpload" name="materialUpload" type="file" class="form-control" />
+                </div>
+
+                <button type="button" class="btn btn-outline-primary" id="saveMaterialBtn" style="font-weight: bold; margin-left:85%">Save Material</button>
+            </div>
+
+
+            <!-- Submit the entire form (Course + Topics) -->
+            <button type="submit" class="btn btn-outline-primary" style="font-weight:bold; margin-left:86%">Create Course</button>
+            <div class="buttons-container">
+                <a class="btn btn-outline-primary" id="backToDetails" style="font-weight: bold; margin-left:81%">Back to Course Details</a>
+            </div>
+            <div class="buttons-container">
+                <a href="/Home/Index" class="btn btn-outline-danger" style="font-weight: bold; margin-left:83%; margin-top:10px">Back to Home Page</a>
+            </div>
+    </div>
+    </form>
+
+</div>
+
+<style>
+
+    #initialCreateButton {
+        display: block;
+        margin: 20px auto;
+        padding: 20px 40px;
+        font-size: 1.5rem;
+        transition: background-color 0.3s ease; /* Add transition for hover effect */
+    }
+
+    h2, h3, h4 {
+        color: #298EE5;
+        font-weight: bold;
+    }
+
+    .form-group {
+        padding: 10px;
+    }
+
+        .form-group label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 97.5%;
+        }
+
+    button {
+        margin-left: 87%;
+        margin-bottom: 10px;
+    }
+
+    a {
+        font-weight: bold;
+    }
+
+    .nav-tabs .nav-item .nav-link.active {
+        color: #298EE5;
+    }
+    .hidden{
+        display:none !important
+    }
+</style>
+
 
 @section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
+    <script>
+        window.onload = () => {
+            document.getElementById('course-details-tab').click();
+        }
+
+        // When the "Create Course" button is clicked
+        document.getElementById('initialCreateButton').addEventListener('click', function () {
+            document.getElementById('initialCreateButtonContainer').style.display = 'none';
+            document.getElementById('courseTab').style.display = 'flex';
+            document.getElementById('courseTabContent').style.display = 'block';
+            var courseDetailsTab = document.getElementById('course-details-tab');
+            var courseDetailsContent = document.getElementById('course-details');
+            courseDetailsTab.classList.add('active');
+            courseDetailsContent.classList.add('show', 'active');
+        });
+
+        // Switch to the Topics & Materials tab when "Add Content" button is clicked
+        document.getElementById('nextToTopics').addEventListener('click', function () {
+            if (validateCourseDetails()) {
+                document.getElementById('course-details').style.display='none'
+                document.getElementById('topics').style.display = 'block'
+                document.getElementById('topics').classList.add('show', 'active')
+                    }
+        });
+
+        // Switch to the Course Details tab when "Back to Course Details" button is clicked
+        document.getElementById('backToDetails').addEventListener('click', function () {
+            document.getElementById('course-details').style.display = 'block'
+            switchTab('course-details-tab', 'course-details');
+        });
+
+        function switchTab(tabId, contentId) {
+            document.querySelectorAll('.nav-link').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('.tab-pane').forEach(content => content.classList.remove('show', 'active'));
+
+            document.getElementById(tabId).classList.add('active');
+            document.getElementById(contentId).classList.add('show', 'active');
+        }
+
+        function validateCourseDetails() {
+            var form = document.getElementById('courseForm');
+            if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+                form.classList.add('was-validated');
+                return false;
+            }
+            return true;
+        }
+
+        document.getElementById('addTopicBtn').addEventListener('click', function () {
+            var topicName = document.getElementById('topicName');
+            if (topicName.checkValidity()) {
+                addTopic(topicName.value);
+                topicName.value = '';
+            } else {
+                topicName.reportValidity();
+            }
+        });
+
+        let topicIndex = 0;
+
+        function addTopic(topicName) {
+            const topicsList = document.getElementById('topicsList');
+            const newTopicDiv = document.createElement('div');
+
+            newTopicDiv.classList.add('topic-item');
+            newTopicDiv.innerHTML = `
+                        <div class="form-group">
+                            <label for="Topics[${topicIndex}].Name">Topic Name</label>
+                            <input type="text" class="form-control" name="Topics[${topicIndex}].Name" value="${topicName}" />
+                        </div>
+                        <div id="materials-${topicIndex}" class="materials">
+                            <!-- Material inputs can go here -->
+                        </div>
+                    `;
+
+            topicsList.appendChild(newTopicDiv);
+            topicIndex++;
+        }
+
+
+        function showMaterialSection(topicName) {
+            document.getElementById('selectedTopicName').textContent = topicName;
+            document.getElementById('materialSection').style.display = 'block';
+            document.getElementById('saveMaterialBtn').onclick = function () {
+                saveMaterial(topicName);
+            };
+        }
+
+        function saveMaterial(topicName) {
+            var contentType = document.querySelector('input[name="contentType"]:checked').value;
+            var fileInput = document.getElementById('materialUpload');
+
+            if (fileInput.checkValidity()) {
+                var file = fileInput.files[0];
+                var materialsDiv = document.getElementById(`materials-${topicName}`);
+                var newMaterialDiv = document.createElement('div');
+                newMaterialDiv.innerHTML = `<p>${contentType}: ${file.name}</p>`;
+                materialsDiv.appendChild(newMaterialDiv);
+                fileInput.value = '';
+                document.getElementById('materialSection').style.display = 'none';
+            } else {
+                fileInput.reportValidity();
+            }
+        }
+
+        document.getElementById('submitCourseBtn').addEventListener('click', function (event) {
+            event.preventDefault();
+            if (validateCourseDetails() && validateTopics()) {
+                window.courseForm.submit();
+                alert('Course created successfully!');
+            }
+        });
+
+        function validateTopics() {
+            var topicsList = document.getElementById('topicsList');
+            if (topicsList.children.length === 0) {
+                alert('Please add at least one topic to the course.');
+                return false;
+            }
+            return true;
+        }
+    </script>
 }

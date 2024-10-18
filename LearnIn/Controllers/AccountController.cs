@@ -106,9 +106,56 @@ namespace LearnIn.Controllers
             var user = new ApplicationUser();
             return View(user);
         }
+
         [HttpPost]
         public async Task<IActionResult> LogIn(string username, string password)
         {
+           //................... Login as an admin Directly .......................//
+            const string AdminUsername = "AdminUser";
+            const string AdminPassword = "AdminPassword123@";
+
+            if (username == AdminUsername && password == AdminPassword)
+            {
+                var adminUser = await _userManager.FindByNameAsync(AdminUsername);
+                if(adminUser == null)
+                {
+                    adminUser = new ApplicationUser
+                    {
+                        UserName = AdminUsername,
+                        Email = "admin@gmail.com", 
+                        Id = Guid.NewGuid().ToString() 
+                    };
+
+                    var createAdminResult = await _userManager.CreateAsync(adminUser, AdminPassword);
+                    if (!createAdminResult.Succeeded)
+                    {
+                        ViewBag.Status = 1;
+                        ViewBag.message = "Error creating admin user: " + string.Join(", ", createAdminResult.Errors.Select(e => e.Description));
+                        return View();
+                    }
+                }
+                    
+                if (!await _roleManager.RoleExistsAsync("Admin"))
+                {
+                    await _roleManager.CreateAsync(new IdentityRole("Admin"));
+                }
+
+                var adminRoleExists = await _userManager.IsInRoleAsync(adminUser, "Admin");
+                if (!adminRoleExists)
+                {
+                    var role = await _userManager.AddToRoleAsync(adminUser, "Admin");
+                    if (!role.Succeeded)
+                    {
+                        ViewBag.Status = 1;
+                        ViewBag.message = "Error assigning admin role: " + string.Join(", ", role.Errors.Select(e => e.Description));
+                        return View();
+                    }
+                }
+                await _signInManager.SignInAsync(adminUser, isPersistent: false);
+                return RedirectToAction("Index", "Home");
+            }
+
+            //..................Normal User...........................//
             var result = await _signInManager.PasswordSignInAsync(username, password, false, false);
             if (result.Succeeded)
             {
@@ -122,24 +169,7 @@ namespace LearnIn.Controllers
 
             return View();
         }
-        //----------------------RedirectBasedOnRole-------------------------//
-        //public async Task<IActionResult> RedirectBasedOnRole()
-        //{
-        //    var user = await _userManager.GetUserAsync(User);
-
-        //    if (await _userManager.IsInRoleAsync(user, "Instructor"))
-        //    {
-        //        return RedirectToAction("InstructorDashboard", "Instructor");
-        //    }
-        //    else if (await _userManager.IsInRoleAsync(user, "Student"))
-        //    {
-        //        return RedirectToAction("StudentDashboard", "Student");
-        //    }
-
-        //    return RedirectToAction("Index", "Home");
-        //}
-
-
+        
         //-------------------Log Out---------------------//
         public async Task<IActionResult> LogOut()
         {

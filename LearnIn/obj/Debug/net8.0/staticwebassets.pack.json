@@ -21,12 +21,20 @@
       "PackagePath": "staticwebassets\\images\\0fb2e020-218a-4ecb-9ebc-accf99fa8b09_Screenshot 2024-10-08 001252.png"
     },
     {
+      "Id": "D:\\.Net\\DEPI\\Final Project\\OnlineLearningPlatform\\LearnIn\\wwwroot\\images\\17ae7c91-3d6a-4059-b3a2-c616a268829c_Screenshot 2024-10-08 001252.png",
+      "PackagePath": "staticwebassets\\images\\17ae7c91-3d6a-4059-b3a2-c616a268829c_Screenshot 2024-10-08 001252.png"
+    },
+    {
       "Id": "D:\\.Net\\DEPI\\Final Project\\OnlineLearningPlatform\\LearnIn\\wwwroot\\images\\18363ba3-ef6a-4344-8fbf-10655922e41a_Account-PNG.png",
       "PackagePath": "staticwebassets\\images\\18363ba3-ef6a-4344-8fbf-10655922e41a_Account-PNG.png"
     },
     {
       "Id": "D:\\.Net\\DEPI\\Final Project\\OnlineLearningPlatform\\LearnIn\\wwwroot\\images\\1cfbdebb-3ebe-49c3-83c8-b4b01d08f4b9_Screenshot 2024-10-08 001252.png",
       "PackagePath": "staticwebassets\\images\\1cfbdebb-3ebe-49c3-83c8-b4b01d08f4b9_Screenshot 2024-10-08 001252.png"
+    },
+    {
+      "Id": "D:\\.Net\\DEPI\\Final Project\\OnlineLearningPlatform\\LearnIn\\wwwroot\\images\\3085bb4d-0fd9-40a0-bb51-7d4d90332404_Screenshot 2024-10-08 001252.png",
+      "PackagePath": "staticwebassets\\images\\3085bb4d-0fd9-40a0-bb51-7d4d90332404_Screenshot 2024-10-08 001252.png"
     },
     {
       "Id": "D:\\.Net\\DEPI\\Final Project\\OnlineLearningPlatform\\LearnIn\\wwwroot\\images\\3cfe5df7-3f03-4d17-ab92-615f70df05d6_Account-PNG.png",
@@ -41,8 +49,16 @@
       "PackagePath": "staticwebassets\\images\\5096523c-d334-4e6d-bee2-2fa60a2b0cd1_Account-PNG.png"
     },
     {
+      "Id": "D:\\.Net\\DEPI\\Final Project\\OnlineLearningPlatform\\LearnIn\\wwwroot\\images\\53ffba65-87b0-4da3-a04e-a1700d42e7b0_Screenshot 2024-10-08 001252.png",
+      "PackagePath": "staticwebassets\\images\\53ffba65-87b0-4da3-a04e-a1700d42e7b0_Screenshot 2024-10-08 001252.png"
+    },
+    {
       "Id": "D:\\.Net\\DEPI\\Final Project\\OnlineLearningPlatform\\LearnIn\\wwwroot\\images\\68f18e78-856f-4969-bf52-43856bd9e826_Account-PNG.png",
       "PackagePath": "staticwebassets\\images\\68f18e78-856f-4969-bf52-43856bd9e826_Account-PNG.png"
+    },
+    {
+      "Id": "D:\\.Net\\DEPI\\Final Project\\OnlineLearningPlatform\\LearnIn\\wwwroot\\images\\69285094-6863-4468-951b-2e09e02b3d35_Screenshot 2024-10-08 001252.png",
+      "PackagePath": "staticwebassets\\images\\69285094-6863-4468-951b-2e09e02b3d35_Screenshot 2024-10-08 001252.png"
     },
     {
       "Id": "D:\\.Net\\DEPI\\Final Project\\OnlineLearningPlatform\\LearnIn\\wwwroot\\images\\7434af7c-e3f9-4a01-917a-6c84a4cc053b_Screenshot 2024-10-08 001252.png",
@@ -97,6 +113,10 @@
       "PackagePath": "staticwebassets\\images\\c8a1b313-6a3f-4d24-915c-dd6adf2ae65a_Account-PNG.png"
     },
     {
+      "Id": "D:\\.Net\\DEPI\\Final Project\\OnlineLearningPlatform\\LearnIn\\wwwroot\\images\\ce0b6587-3865-4730-b82a-33e2f595a796_Screenshot 2024-10-08 001252.png",
+      "PackagePath": "staticwebassets\\images\\ce0b6587-3865-4730-b82a-33e2f595a796_Screenshot 2024-10-08 001252.png"
+    },
+    {
       "Id": "D:\\.Net\\DEPI\\Final Project\\OnlineLearningPlatform\\LearnIn\\wwwroot\\images\\d033aaf2-31aa-4c83-a1e0-4bae42786963_Account-PNG.png",
       "PackagePath": "staticwebassets\\images\\d033aaf2-31aa-4c83-a1e0-4bae42786963_Account-PNG.png"
     },
@@ -135,6 +155,10 @@
     {
       "Id": "D:\\.Net\\DEPI\\Final Project\\OnlineLearningPlatform\\LearnIn\\wwwroot\\images\\f84b5987-8c8f-47d3-83af-840c80614158_account-icon-png-2.jpg",
       "PackagePath": "staticwebassets\\images\\f84b5987-8c8f-47d3-83af-840c80614158_account-icon-png-2.jpg"
+    },
+    {
+      "Id": "D:\\.Net\\DEPI\\Final Project\\OnlineLearningPlatform\\LearnIn\\wwwroot\\images\\f9a4473b-841c-474f-aa8e-fb5e84bcd33c_Screenshot 2024-10-08 001252.png",
+      "PackagePath": "staticwebassets\\images\\f9a4473b-841c-474f-aa8e-fb5e84bcd33c_Screenshot 2024-10-08 001252.png"
     },
     {
       "Id": "D:\\.Net\\DEPI\\Final Project\\OnlineLearningPlatform\\LearnIn\\wwwroot\\images\\fc8cd29d-6bb5-46df-96e8-7fc2954e28ad_Screenshot 2024-10-08 001252.png",

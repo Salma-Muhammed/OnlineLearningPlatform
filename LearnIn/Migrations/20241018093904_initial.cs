@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace LearnIn.Migrations
 {
     /// <inheritdoc />
-    public partial class Initial : Migration
+    public partial class initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -33,10 +33,10 @@ namespace LearnIn.Migrations
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     Image = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Age = table.Column<int>(type: "int", nullable: false),
+                    Age = table.Column<int>(type: "int", nullable: true),
                     UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: false),
                     Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: false),
-                    PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedEmail = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     EmailConfirmed = table.Column<bool>(type: "bit", nullable: false),
@@ -256,9 +256,9 @@ namespace LearnIn.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "253cff31-1c03-48d2-b8c4-a1c2fd369996", null, "Student", "STUDENT" },
-                    { "3698cd04-701c-4f21-a0ba-0721407844db", null, "Admin", "ADMIN" },
-                    { "896a91d5-f531-4f07-b17b-4881ef13ccdb", null, "Instructor", "INSTRUCTOR" }
+                    { "1d590797-60a2-45f6-a802-8281b698ef71", null, "Student", "STUDENT" },
+                    { "485dc489-f039-417d-a8c0-d2c24080b106", null, "Instructor", "INSTRUCTOR" },
+                    { "49931b9f-3929-4479-8646-a20420f44208", null, "Admin", "ADMIN" }
                 });
 
             migrationBuilder.CreateIndex(

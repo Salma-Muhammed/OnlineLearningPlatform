@@ -44,12 +44,17 @@ namespace LearnIn.Controllers
             foreach (var user in users)
             {
                 var roles = await _userManager.GetRolesAsync(user);
-                userRoleList.Add(new UserRoleViewModel
+
+                // Don't Display Admins
+                if (!roles.Contains("Admin"))
                 {
-                    UserId = user.Id,
-                    UserName = user.UserName,
-                    Roles = roles.ToList()
-                });
+                    userRoleList.Add(new UserRoleViewModel
+                    {
+                        UserId = user.Id,
+                        UserName = user.UserName,
+                        Roles = roles.ToList()
+                    });
+                }
             }
 
             // Pass the list of users and their roles to the view using ViewBag
@@ -57,10 +62,6 @@ namespace LearnIn.Controllers
 
             return View();
         }
-
-
-
-
 
         //--------------------AddRole-----------------//
         [HttpGet]
@@ -173,22 +174,6 @@ namespace LearnIn.Controllers
             return View(model);
         }
         //------------------------------------------//
-        //[HttpGet]
-        //public async Task<IActionResult> DeleteUser(string id)
-        //{
-        //    if (string.IsNullOrEmpty(id))
-        //    {
-        //        return RedirectToAction("DisplayUsers");
-        //    }
-
-        //    var user = await _userManager.FindByIdAsync(id);
-        //    if (user == null)
-        //    {
-        //        return RedirectToAction("DisplayUsers");
-        //    }
-
-        //    return View(user);
-        //}
 
         [HttpPost]
         public async Task<IActionResult> DeleteUser(string id)
